@@ -9,6 +9,8 @@ using namespace std;
 #define MAX_STATION_NUM 100
 #define MAX_DIS_BETWEEN_STATION 50000
 
+#define __USE_MULTI_LINES__
+
 /*
 @ 获取两个地铁站间的最小距离
 @ 返回值: EN_RETURN_SUCC: 成功, EN_RETURN_INVALID_LINE: 失败

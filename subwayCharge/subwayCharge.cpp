@@ -12,6 +12,8 @@
 using namespace testing;
 #endif
 
+// #define __USE_MULTI_LINES__
+
 /*
 @ 初始化地铁收费系统, 调用各个模块的初始化函数
 */

@@ -1,18 +1,18 @@
-#ifndef __SUBWAY_PRICE_H__
+ï»¿#ifndef __SUBWAY_PRICE_H__
 #define __SUBWAY_PRICE_H__
 #include "subwayCard.h"
 #include "subwayError.h"
 
 /*
-@ »ñÈ¡»ù´¡Æ±¼Û, ¼´°´½øÕ¾µãÓë³öÕ¾µãÖ®¼äµÄ×î¶ÌÀï³Ì·Ö¼¶¼ÆËã
+@ è·å–åŸºç¡€ç¥¨ä»·, å³æŒ‰è¿›ç«™ç‚¹ä¸å‡ºç«™ç‚¹ä¹‹é—´çš„æœ€çŸ­é‡Œç¨‹åˆ†çº§è®¡ç®—
 */
 int GetBasePrice(unsigned int meters);
 
 /*
-@ »ñÈ¡¿Û·ÑÆ±¼Û£¬¼¸ÖÖÇé¿ö;
-@   1. Àï³ÌÊıÎª0£¬°´Ê±¼äÊÕ·Ñ;
-@   2. Àï³ÌÊı²»Îª0;
-@ ·µ»ØÖµ: 
+@ è·å–æ‰£è´¹ç¥¨ä»·ï¼Œå‡ ç§æƒ…å†µ;
+@   1. é‡Œç¨‹æ•°ä¸º0ï¼ŒæŒ‰æ—¶é—´æ”¶è´¹;
+@   2. é‡Œç¨‹æ•°ä¸ä¸º0;
+@ è¿”å›å€¼: 
 */
 EN_RETURN_CODE GetDeductPrice(EN_CARD_TYPE enCardType, unsigned int balance, unsigned int meters, ST_SUBWAY_TIME &enterTime, ST_SUBWAY_TIME &exitTime, unsigned int &deductPrice);
 

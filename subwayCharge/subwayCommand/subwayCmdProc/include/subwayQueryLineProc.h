@@ -1,13 +1,13 @@
-#ifndef __CMD_QUERY_LINE_PROC_H__
+ï»¿#ifndef __CMD_QUERY_LINE_PROC_H__
 #define __CMD_QUERY_LINE_PROC_H__
 #include "subwayGlobalDef.h"
 #include "subwayCmdParse/subwayCmdParse.h"
 
 /*
-@ ²éÑ¯µØÌúÏß
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ æŸ¥è¯¢åœ°é“çº¿
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcQueryLineCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

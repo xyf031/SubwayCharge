@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -12,14 +12,14 @@
 using namespace std;
 
 /*
-@ ³äÖµÃüÁî
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ å……å€¼å‘½ä»¤
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //»ñÈ¡¿¨ĞÅÏ¢ GetCardInfo
+    //è·å–å¡ä¿¡æ¯ GetCardInfo
     unsigned int balance;
     unsigned int cardNo = unCmd.stCmdFillCharge.cardNo;
     EN_CARD_TYPE enCard;
@@ -31,7 +31,7 @@ void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
     }
 
 
-    //½øĞĞ³äÖµ RechargeCard
+    //è¿›è¡Œå……å€¼ RechargeCard
     enResult = RechargeCard(cardNo, unCmd.stCmdFillCharge.cardCharge);
     if (enResult != EN_RETURN_SUCC)
     {
@@ -40,8 +40,9 @@ void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
     }
 
 
-    //¸ù¾İ³äÖµºóµÄ¿¨ĞÅÏ¢  GetCardInfo
+    //æ ¹æ®å……å€¼åçš„å¡ä¿¡æ¯  GetCardInfo
     enResult = GetCardInfo(cardNo, balance ,enCard);
     GetOutputResultStr(EN_CMD_TYPE_FILL_CHARGE, enResult, cardNo, enCard, balance, returnStr);
     
 }
+

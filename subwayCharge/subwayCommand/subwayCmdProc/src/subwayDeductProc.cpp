@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -13,14 +13,14 @@
 using namespace std;
 
 /*
-@ ´¦Àí¿Û·ÑÃüÁî
-@ Èë²Î£ºstCmdDeduct, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: void
+@ å¤„ç†æ‰£è´¹å‘½ä»¤
+@ å…¥å‚ï¼šstCmdDeduct, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: void
 */
 void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //¸ù¾İ¿¨ºÅ»ñÈ¡¿¨ĞÅÏ¢  GetCardInfo
+    //æ ¹æ®å¡å·è·å–å¡ä¿¡æ¯  GetCardInfo
     int cardNo = unCmd.stCmdDeduct.cardNo;
     unsigned int balance = 0;
     EN_CARD_TYPE enCard = EN_CARD_TYPE_BUTT;
@@ -30,7 +30,7 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    //¼ì²éÊ±¼ä¸ñÊ½  CHECK_TIME
+    //æ£€æŸ¥æ—¶é—´æ ¼å¼  CHECK_TIME
     ST_SUBWAY_TIME enterTime = unCmd.stCmdDeduct.enterTime;
     ST_SUBWAY_TIME exitTime = unCmd.stCmdDeduct.exitTime;
     if (!(CHECK_TIME((&enterTime)) && CHECK_TIME((&exitTime)))) {
@@ -38,7 +38,7 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    //¼ÆËã³Ë³µÊ±³¤  DIFF_TIME
+    //è®¡ç®—ä¹˜è½¦æ—¶é•¿  DIFF_TIME
     int diffMinutes = 0;
     DIFF_TIME((&exitTime), (&enterTime), diffMinutes);
     if (diffMinutes < 0) {
@@ -46,7 +46,7 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    //¼ÆËãÀï³ÌÊı  GetSubwayStationDis
+    //è®¡ç®—é‡Œç¨‹æ•°  GetSubwayStationDis
     unsigned int dis = 0;
     returnCode  = GetSubwayStationDis(unCmd.stCmdDeduct.enterStation, unCmd.stCmdDeduct.exitStation, dis);
     if (returnCode != EN_RETURN_SUCC) {
@@ -54,7 +54,7 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    //¼ÆËã¿Û·Ñ¼Û¸ñ GetDeductPrice
+    //è®¡ç®—æ‰£è´¹ä»·æ ¼ GetDeductPrice
     unsigned int deductPrice = 0;
     returnCode = GetDeductPrice(enCard, balance, dis, enterTime, exitTime, deductPrice); 
     if (returnCode != EN_RETURN_SUCC) {
@@ -62,7 +62,7 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    //¶Ô³Ë³µ¿¨½øĞĞ¿Û·Ñ DeductCard
+    //å¯¹ä¹˜è½¦å¡è¿›è¡Œæ‰£è´¹ DeductCard
     returnCode = DeductCard(cardNo, enCard, deductPrice, balance);
     if (returnCode == EN_RETURN_SUCC && enCard == EN_CARD_TYPE_SINGLE) {
         int result = DeleteCard(cardNo);
@@ -74,12 +74,12 @@ void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         returnCode = EN_RETURN_BALANCE_TOO_LOW;
     }
 
-    // ²åÈëÀúÊ·¼ÇÂ¼
+    // æ’å…¥å†å²è®°å½•
     if (returnCode == EN_RETURN_SUCC && (enCard == EN_CARD_TYPE_ELDER || enCard == EN_CARD_TYPE_NOMAL)) {
         InsertHistory((unsigned int)cardNo, deductPrice, enterTime, exitTime, unCmd.stCmdDeduct.enterStation, unCmd.stCmdDeduct.exitStation);
     }
 
-    //Êä³ö×Ö·û´®
+    //è¾“å‡ºå­—ç¬¦ä¸²
     GetOutputResultStr(EN_CMD_TYPE_DEDUCT, returnCode, cardNo, enCard, balance, returnStr);
     return;
 }

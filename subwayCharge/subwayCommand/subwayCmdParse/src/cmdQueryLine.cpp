@@ -1,20 +1,20 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdQueryLine.h"
 using namespace std;
 
-//²éÑ¯ÏßÂ·µÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//æŸ¥è¯¢çº¿è·¯çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdQueLinePattern("^[ ]{0,}[lL]{1}[ ]{0,}$"); 
 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdQueLineFunc[EN_CMD_QUERY_LINE_BUTT] = 
 {
     cmdCmdParse<ST_CMD_QUERY_LINE>
 };
 
-//²éÑ¯ÏßÂ·ÃüÁî
+//æŸ¥è¯¢çº¿è·¯å‘½ä»¤
 int parseCmdQueryLine(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_QUERY_LINE>(cmd, pStCmd, g_cmdQueLinePattern, g_cmdQueLineFunc);
@@ -26,7 +26,7 @@ int parseCmdQueryLine(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdQueryLine(ST_CMD_QUERY_LINE &stQueLine)
 {
     cout<<"CMD:                 "<<stQueLine.cmd<<endl;

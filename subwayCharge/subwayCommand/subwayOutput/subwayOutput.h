@@ -1,4 +1,4 @@
-#ifndef __SUBWAY_OUTPUT_H__
+ï»¿#ifndef __SUBWAY_OUTPUT_H__
 #define __SUBWAY_OUTPUT_H__
 #include <sstream>
 #include "subwayError.h"
@@ -7,10 +7,10 @@
 using namespace std;
 
 /*
-@ Êä³ö·µ»Ø×Ö·û´®
-@ Èë²Î£º
-@ ³ö²Î: oss, ×Ö·û´®Á÷
-@ ·µ»ØÖµ: void
+@ è¾“å‡ºè¿”å›å­—ç¬¦ä¸²
+@ å…¥å‚ï¼š
+@ å‡ºå‚: oss, å­—ç¬¦ä¸²æµ
+@ è¿”å›å€¼: void
 */
 void GetOutputResultStr(EN_CMD_TYPE enCmd, EN_RETURN_CODE enResult, unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int balance, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

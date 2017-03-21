@@ -1,14 +1,14 @@
-#include  <sstream>
+ï»¿#include  <sstream>
 #include "list.h"
 #include "subwayLine.h"
 #include "subwayMacro.h"
 
 using namespace std;
 
-//·Ç·¨Õ¾µãºÅ
+//éæ³•ç«™ç‚¹å·
 #define INVALID_STATION_NO (unsigned int)(-1)
 
-//µØÌúÏßÂ··½Ïò
+//åœ°é“çº¿è·¯æ–¹å‘
 typedef enum
 {
     EN_DERECT_NEXT = 0,
@@ -16,7 +16,7 @@ typedef enum
     EN_DERECT_BUTT
 }EN_DERECT;
 
-//µØÌúÕ¾
+//åœ°é“ç«™
 typedef struct
 {
     unsigned int no;
@@ -25,20 +25,20 @@ typedef struct
     unsigned int dis[EN_DERECT_BUTT];
 }ST_STATION;
 
-//µØÌúÏßÂ·
+//åœ°é“çº¿è·¯
 typedef struct
 {
     TListHead subwayLine;
 }ST_LINE;
 
-//µØÌúÕ¾ºÍµØÌúÏßÁĞ±í
+//åœ°é“ç«™å’Œåœ°é“çº¿åˆ—è¡¨
 ST_STATION g_stasionList[MAX_STATION_NUM];
 ST_LINE g_line;
 
 
 /*
-@ ³õÊ¼»¯µØÌúÕ¾ĞÅÏ¢
-@ ·µ»ØÖµ:void
+@ åˆå§‹åŒ–åœ°é“ç«™ä¿¡æ¯
+@ è¿”å›å€¼:void
 */
 void InitStation(unsigned int stationNo)
 {
@@ -51,8 +51,8 @@ void InitStation(unsigned int stationNo)
 }
 
 /*
-@ ³õÊ¼»¯µØÌúÏßÂ·ĞÅÏ¢
-@ ·µ»ØÖµ:void
+@ åˆå§‹åŒ–åœ°é“çº¿è·¯ä¿¡æ¯
+@ è¿”å›å€¼:void
 */
 void InitSubwayLine()
 {
@@ -65,8 +65,8 @@ void InitSubwayLine()
 }
 
 /*
-@ Ôö¼ÓÒ»¸öµØÌúÕ¾
-@ ·µ»ØÖµ: -1, Ê§°Ü;  0, ³É¹¦
+@ å¢åŠ ä¸€ä¸ªåœ°é“ç«™
+@ è¿”å›å€¼: -1, å¤±è´¥;  0, æˆåŠŸ
 */
 EN_RETURN_CODE AddSubwayStation(char* stationName, unsigned int dis)
 {
@@ -84,13 +84,13 @@ EN_RETURN_CODE AddSubwayStation(char* stationName, unsigned int dis)
     {
         IF_INVALID_RETURN(dis != 0, EN_RETURN_INVALID_DIS)
 
-        //°Ñ·´·½ÏòµÄ¾àÀëÌîĞ´³É¹¦
+        //æŠŠåæ–¹å‘çš„è·ç¦»å¡«å†™æˆåŠŸ
         TListHead* prevNode = g_line.subwayLine.prev;
         ST_STATION* prevStation = CONTAINER_OF(prevNode, ST_STATION, list);
         prevStation->dis[EN_DERECT_PREV] = dis;
     }
 
-    //ÌîĞ´µ±Ç°Õ¾µã
+    //å¡«å†™å½“å‰ç«™ç‚¹
     g_stasionList[stationNo].usrFlag = true;
     g_stasionList[stationNo].dis[EN_DERECT_PREV] = 0;
     g_stasionList[stationNo].dis[EN_DERECT_NEXT] = dis;  
@@ -100,8 +100,8 @@ EN_RETURN_CODE AddSubwayStation(char* stationName, unsigned int dis)
 }
 
 /*
-@ ¸ù¾İ·½Ïò»ñÈ¡ÏÂÒ»½Úµã
-@ ·µ»ØÖµ: TListHead* tmpNode
+@ æ ¹æ®æ–¹å‘è·å–ä¸‹ä¸€èŠ‚ç‚¹
+@ è¿”å›å€¼: TListHead* tmpNode
 */
 TListHead* GetNextNode(TListHead* srcNode, EN_DERECT enDerect)
 {
@@ -119,8 +119,8 @@ TListHead* GetNextNode(TListHead* srcNode, EN_DERECT enDerect)
 }
 
 /*
-@ ³¯¹Ì¶¨·½Ïò²éÕÒÄ¿±êÕ¾µã
-@ ·µ»ØÖµ: 0: ³É¹¦, -1: Ê§°Ü
+@ æœå›ºå®šæ–¹å‘æŸ¥æ‰¾ç›®æ ‡ç«™ç‚¹
+@ è¿”å›å€¼: 0: æˆåŠŸ, -1: å¤±è´¥
 */
 int GetOneDerectDis(TListHead* srcNode, EN_DERECT enDerect, unsigned int stationNo2, unsigned int &dis)
 {
@@ -142,8 +142,8 @@ int GetOneDerectDis(TListHead* srcNode, EN_DERECT enDerect, unsigned int station
 }
 
 /*
-@ »ñÈ¡Á½¸öµØÌúÕ¾¼äµÄ×îĞ¡¾àÀë
-@ ·µ»ØÖµ: EN_RETURN_SUCC: ³É¹¦, ÆäËû: Ê§°Ü
+@ è·å–ä¸¤ä¸ªåœ°é“ç«™é—´çš„æœ€å°è·ç¦»
+@ è¿”å›å€¼: EN_RETURN_SUCC: æˆåŠŸ, å…¶ä»–: å¤±è´¥
 */
 EN_RETURN_CODE GetSubwayStationDis(char* stationName1, char* stationName2, unsigned int &dis)
 {
@@ -177,8 +177,8 @@ EN_RETURN_CODE GetSubwayStationDis(char* stationName1, char* stationName2, unsig
 }
 
 /*
-@ É¾³ıµØÌúÏß
-@ ·µ»ØÖµ: void
+@ åˆ é™¤åœ°é“çº¿
+@ è¿”å›å€¼: void
 */
 void DelSubwayLine()
 {
@@ -187,13 +187,13 @@ void DelSubwayLine()
 }
 
 /*
-@ ´òÓ¡ËùÓĞµØÌúÏß
+@ æ‰“å°æ‰€æœ‰åœ°é“çº¿
 */
 void GetLineInfo(string &outStr)
 {
     ostringstream oss;
 
-    oss<<"µØÌúÏßÂ·£º";
+    oss<<"åœ°é“çº¿è·¯ï¼š";
 
     TListHead* pos = NULL;
     ST_STATION* tmpStation = NULL;
@@ -210,8 +210,8 @@ void GetLineInfo(string &outStr)
 }
 
 /*
-@ ÉèÖÃÄ¬ÈÏµØÌúÏßÂ·
-@ ·µ»ØÖµ: NULL
+@ è®¾ç½®é»˜è®¤åœ°é“çº¿è·¯
+@ è¿”å›å€¼: NULL
 */
 void SetDefaultLine()
 {

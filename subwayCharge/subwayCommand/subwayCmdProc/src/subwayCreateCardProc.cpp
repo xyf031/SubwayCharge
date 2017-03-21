@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -13,15 +13,15 @@
 using namespace std;
 
 /*
-@ °ìÀíÆÕÍ¨¿¨
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ åŠç†æ™®é€šå¡
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcCreateCardCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
     EN_CARD_TYPE enCard;
-    //Ê¶±ğ¿¨ÀàĞÍ GetCardType
+    //è¯†åˆ«å¡ç±»å‹ GetCardType
     unsigned int cardNo = 0;
     unsigned int balance = 0;
     cout << unCmd.stCmdCreateCard.cardType;

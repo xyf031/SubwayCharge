@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -12,21 +12,21 @@
 using namespace std;
 
 /*
-@ °ìÀíµ¥³ÌÆ±
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ åŠç†å•ç¨‹ç¥¨
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 
 void ProcCreateSingleTicketCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //»ñÈ¡Á½¸öÕ¾µã¼äµÄÀï³ÌÊı GetSubwayStationDis
+    //è·å–ä¸¤ä¸ªç«™ç‚¹é—´çš„é‡Œç¨‹æ•° GetSubwayStationDis
 
-    //»ñÈ¡Á½¸öÕ¾µã¼äµÄ»ù±¾Æ±¼Û  GetBasePrice
+    //è·å–ä¸¤ä¸ªç«™ç‚¹é—´çš„åŸºæœ¬ç¥¨ä»·  GetBasePrice
 
-    //°ìµ¥³Ì¿¨ AssignCard
+    //åŠå•ç¨‹å¡ AssignCard
 
-    //Êä³ö×Ö·û´®
+    //è¾“å‡ºå­—ç¬¦ä¸²
     //GetOutputResultStr(EN_CMD_TYPE_SINGLE_TICKET, returnCode, cardNo, EN_CARD_TYPE_SINGLE, basePrice, returnStr);
     char *srcStation = unCmd.stCmdSingleTicket.srcStation;
     char *dstStation = unCmd.stCmdSingleTicket.dstStation;

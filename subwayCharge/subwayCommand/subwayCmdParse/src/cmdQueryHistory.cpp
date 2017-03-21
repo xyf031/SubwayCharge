@@ -1,28 +1,28 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdQueryHistory.h"
 using namespace std;
 
 
-//¹ºÂòµ¥³ÌÆ±ÃüÁîµÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//è´­ä¹°å•ç¨‹ç¥¨å‘½ä»¤çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdQueHistoryPattern("^[ ]{0,}[hH]{1}[ ]{1}[0-9]{1,}[ ]{0,}$"); 
 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdQueHistoryFunc[EN_CMD_QUERY_HIS_BUTT] = 
 {
     cmdCmdParse<ST_CMD_QUERY_HIS>,
     cmdCardNoParse<ST_CMD_QUERY_HIS>,
 };
 
-//Ê¹ÓÃÕıÔò±í´ïÊ½¼ì²éÃüÁîÊÇ·ñ·ûºÏ¹æ·¶
+//ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼æ£€æŸ¥å‘½ä»¤æ˜¯å¦ç¬¦åˆè§„èŒƒ
 int checkQueHistory(string &cmd)
 {
     return checkCmd(cmd, g_cmdQueHistoryPattern);
 }
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdQueHistory(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_QUERY_HIS>(cmd, pStCmd, g_cmdQueHistoryPattern, g_cmdQueHistoryFunc);
@@ -34,7 +34,7 @@ int parseCmdQueHistory(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdQueHistory(ST_CMD_QUERY_HIS &stQueHistory)
 {
     cout<<"CMD:                 "<<stQueHistory.cmd<<endl;

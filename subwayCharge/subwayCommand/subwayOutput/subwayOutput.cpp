@@ -1,10 +1,10 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <sstream>
 #include <iostream>
 #include "subwayOutput.h"
 using namespace std;
 
-//¿ÉÑ¡µÄÊä³ö×Ö¶Î
+//å¯é€‰çš„è¾“å‡ºå­—æ®µ
 typedef enum
 {
     EN_OUTPUT_CARD_NO = 0,
@@ -14,15 +14,15 @@ typedef enum
     EN_OUTPUT_BUTT
 }EN_OUTPUT_BITMAP;
 
-//¿ÉÑ¡Êä³ö×Ö¶ÎÃû³Æ
+//å¯é€‰è¾“å‡ºå­—æ®µåç§°
 char g_outputElement[EN_OUTPUT_BUTT][64] = 
 {
-    "¿¨ºÅ",
-    "¿¨ÀàĞÍ",
-    "Óà¶î"
+    "å¡å·",
+    "å¡ç±»å‹",
+    "ä½™é¢"
 };
 
-//Ã¿ÌõÃüÁîµÄ¿ÉÑ¡Êä³ö×Ö¶ÎµÄbitMap
+//æ¯æ¡å‘½ä»¤çš„å¯é€‰è¾“å‡ºå­—æ®µçš„bitMap
 typedef enum
 {
     EN_BITMAP_TYPE_SUCC = 0,
@@ -36,10 +36,10 @@ typedef struct
 }ST_OUTPUT_BIT;
 
 /*
-    Ã¿ÌõÃüÁîµÄ¿ÉÑ¡Êä³ö×Ö¶ÎµÄbitMap
+    æ¯æ¡å‘½ä»¤çš„å¯é€‰è¾“å‡ºå­—æ®µçš„bitMap
     bit32~bit0: 
-    bit0: ¿¨ºÅ;     bit2: ¿¨ÀàĞÍ;      bit3£º Óà¶î;   bit3£º Ïû·Ñ¼ÇÂ¼
-    other£ºÄ¿Ç°»¹Î´ÓÃµ½
+    bit0: å¡å·;     bit2: å¡ç±»å‹;      bit3ï¼š ä½™é¢;   bit3ï¼š æ¶ˆè´¹è®°å½•
+    otherï¼šç›®å‰è¿˜æœªç”¨åˆ°
 
     EN_CMD_TYPE_DEDUCT = 0,
     EN_CMD_TYPE_SINGLE_TICKET,
@@ -66,14 +66,14 @@ ST_OUTPUT_BIT g_CmdOutputBitmap[EN_CMD_TYPE_BUTT] =
 
 
 /*
-@ Êä³ö·µ»Ø×Ö·û´®
-@ Èë²Î£º
-@       enCmd:      ÃüÁîºÅ
-@       enResult:   ÃüÁî´¦Àí½á¹û
-@       cardNo:     ¿¨ºÅ
-@       balance:    Óà¶î
-@ ³ö²Î: returnStr:  Êä³ö×Ö·û´®
-@ ·µ»ØÖµ: void
+@ è¾“å‡ºè¿”å›å­—ç¬¦ä¸²
+@ å…¥å‚ï¼š
+@       enCmd:      å‘½ä»¤å·
+@       enResult:   å‘½ä»¤å¤„ç†ç»“æœ
+@       cardNo:     å¡å·
+@       balance:    ä½™é¢
+@ å‡ºå‚: returnStr:  è¾“å‡ºå­—ç¬¦ä¸²
+@ è¿”å›å€¼: void
 */
 void GetOutputResultStr(EN_CMD_TYPE enCmd, EN_RETURN_CODE enResult, unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int balance, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
@@ -86,18 +86,18 @@ void GetOutputResultStr(EN_CMD_TYPE enCmd, EN_RETURN_CODE enResult, unsigned int
     switch(enResult)
     {
         case EN_RETURN_SUCC:
-            oss<<"<³É¹¦>";
+            oss<<"<æˆåŠŸ>";
             errStr = "";
             bitType = EN_BITMAP_TYPE_SUCC;
             break;
         case EN_RETURN_BALANCE_TOO_LOW:
-            oss<<"<³É¹¦>";
-            errStr = "<ÌáĞÑ=" + string(GetErrStr(enResult)) + ">";
+            oss<<"<æˆåŠŸ>";
+            errStr = "<æé†’=" + string(GetErrStr(enResult)) + ">";
             bitType = EN_BITMAP_TYPE_SUCC;
             break;
         default:
-            oss<<"<Ê§°Ü>";
-            errStr = "<Ê§°ÜÔ­Òò=" + string(GetErrStr(enResult)) + ">";
+            oss<<"<å¤±è´¥>";
+            errStr = "<å¤±è´¥åŸå› =" + string(GetErrStr(enResult)) + ">";
             bitType = EN_BITMAP_TYPE_FAIL;
             break;
     }

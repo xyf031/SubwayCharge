@@ -1,4 +1,4 @@
-#include <Winsock2.h>
+ï»¿#include <Winsock2.h>
 #include <iostream>
 #include "subwayCommon.h"
 #include "subwaySocket.h"
@@ -11,19 +11,19 @@ typedef enum
     EN_LOG_BUTT
 }EN_LOG_TYPE;
 
-//¼àÌısocketĞÅÏ¢
+//ç›‘å¬socketä¿¡æ¯
 intptr_t g_ListenSocketId;
 intptr_t g_ClientSocketId;
 struct sockaddr_in  g_addrClient;
 
-//socket½ÓÊÕºÍ·¢ËÍbuffer
+//socketæ¥æ”¶å’Œå‘é€buffer
 char g_receiveBuff[MAX_RECEIVE_BUFFER_LENGTH];
 char g_sendBuff[MAX_SEND_BUFFER_LENGTH];
 
-//ÃüÁî´¦ÀíÈë¿Úº¯Êı
+//å‘½ä»¤å¤„ç†å…¥å£å‡½æ•°
 CMD_PROC_ENTER_FUNC g_cmdProcEnter = NULL;
 
-//µÇÈëµÇ³ö´òÓ¡
+//ç™»å…¥ç™»å‡ºæ‰“å°
 char g_logStr[EN_LOG_BUTT][16] = 
 {
     " login",
@@ -31,8 +31,8 @@ char g_logStr[EN_LOG_BUTT][16] =
 };
 
 /*
-@ ´òÓ¡¿Í»§¶ËĞÅÏ¢
-@ Èë²Î£º type µÇÈë»òµÇ³ö
+@ æ‰“å°å®¢æˆ·ç«¯ä¿¡æ¯
+@ å…¥å‚ï¼š type ç™»å…¥æˆ–ç™»å‡º
 */
 void PrintClientInfo(EN_LOG_TYPE type)
 {
@@ -44,7 +44,7 @@ void PrintClientInfo(EN_LOG_TYPE type)
 }
 
 /*
-@ ³õÊ¼»¯SocketÍ¨ĞÅ»·¾³
+@ åˆå§‹åŒ–Socketé€šä¿¡ç¯å¢ƒ
 */
 void InitSusbwaySocket(CMD_PROC_ENTER_FUNC func)
 {
@@ -70,8 +70,8 @@ void InitSusbwaySocket(CMD_PROC_ENTER_FUNC func)
 }
 
 /*
-@ ½ÓÊÜ¿Í»§¶ËµÄÁ¬½ÓÇëÇó
-@ ·µ»ØÖµ: 0, ³É¹¦; -1, Ê§°Ü£º
+@ æ¥å—å®¢æˆ·ç«¯çš„è¿æ¥è¯·æ±‚
+@ è¿”å›å€¼: 0, æˆåŠŸ; -1, å¤±è´¥ï¼š
 */
 int AcceptClient()
 {
@@ -88,8 +88,8 @@ int AcceptClient()
 }
 
 /*
-@ ³õÊ¼»¯¼àÌısocket£¬Æô¶¯¼àÌı
-@ ·µ»ØÖµ: 0, ³É¹¦; -1, Ê§°Ü£º
+@ åˆå§‹åŒ–ç›‘å¬socketï¼Œå¯åŠ¨ç›‘å¬
+@ è¿”å›å€¼: 0, æˆåŠŸ; -1, å¤±è´¥ï¼š
 */
 int ListenAndAcceptClient()
 {
@@ -124,8 +124,8 @@ int ListenAndAcceptClient()
 
 
 /*
-@ ½ÓÊÕ¿Í»§¶ËµÄÊı¾İ, ²¢µ÷ÓÃÏûÏ¢´¦Àí½Ó¿Ú½øĞĞ´¦Àí
-@ ·µ»ØÖµ: void
+@ æ¥æ”¶å®¢æˆ·ç«¯çš„æ•°æ®, å¹¶è°ƒç”¨æ¶ˆæ¯å¤„ç†æ¥å£è¿›è¡Œå¤„ç†
+@ è¿”å›å€¼: void
 */
 void ReceiveCmdFlow()
 {

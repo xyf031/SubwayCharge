@@ -1,4 +1,4 @@
-// subwayCharge.cpp : Defines the entry point for the console application.
+ï»¿// subwayCharge.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -13,7 +13,7 @@ using namespace testing;
 #endif
 
 /*
-@ ³õÊ¼»¯µØÌúÊÕ·ÑÏµÍ³, µ÷ÓÃ¸÷¸öÄ£¿éµÄ³õÊ¼»¯º¯Êı
+@ åˆå§‹åŒ–åœ°é“æ”¶è´¹ç³»ç»Ÿ, è°ƒç”¨å„ä¸ªæ¨¡å—çš„åˆå§‹åŒ–å‡½æ•°
 */
 void InitSubwayCharge()
 {
@@ -21,14 +21,14 @@ void InitSubwayCharge()
     InitSubwayLine();
     InitSusbwaySocket(ProcCmdEnter);
 
-    //Ô¤ÖÃÄ¬ÈÏµØÌúÏßÂ·
+    //é¢„ç½®é»˜è®¤åœ°é“çº¿è·¯
     SetDefaultLine();
 }
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 #if _SUBWAY_LLT
-    //LLT¹¤³ÌÖĞ½øĞĞDT
+    //LLTå·¥ç¨‹ä¸­è¿›è¡ŒDT
     printf("Running main()------------------ \n");
     testing::InitGoogleTest(&argc, argv);
     int result = RUN_ALL_TESTS();
@@ -37,13 +37,13 @@ int _tmain(int argc, _TCHAR* argv[])
 #else
     InitSubwayCharge();
 
-    //¼àÌı¿Í»§¶ËµÄÁ¬½ÓÇëÇó
+    //ç›‘å¬å®¢æˆ·ç«¯çš„è¿æ¥è¯·æ±‚
     if(-1 == ListenAndAcceptClient())
     {
         return -1;
     }
 
-    //Ñ­»·½ÓÊÕ¿Í»§¶ËµÄÃüÁîÁ÷
+    //å¾ªç¯æ¥æ”¶å®¢æˆ·ç«¯çš„å‘½ä»¤æµ
     ReceiveCmdFlow();
 #endif
 	return 0;

@@ -1,4 +1,4 @@
-#ifndef __SUBWAY_LINE_H__
+ï»¿#ifndef __SUBWAY_LINE_H__
 #define __SUBWAY_LINE_H__
 #include <iostream>
 #include "subwayError.h"
@@ -8,37 +8,37 @@ using namespace std;
 #define MAX_DIS_BETWEEN_STATION 50000
 
 /*
-@ Ôö¼ÓÒ»¸öµØÌúÕ¾
-@ ·µ»ØÖµ: EN_RETURN_SUCC, ³É¹¦; ÆäËû£ºÊ§°Ü
+@ å¢åŠ ä¸€ä¸ªåœ°é“ç«™
+@ è¿”å›å€¼: EN_RETURN_SUCC, æˆåŠŸ; å…¶ä»–ï¼šå¤±è´¥
 */
 EN_RETURN_CODE AddSubwayStation(char* stationName, unsigned int dis);
 
 /*
-@ »ñÈ¡Á½¸öµØÌúÕ¾¼äµÄ×îĞ¡¾àÀë
-@ ·µ»ØÖµ: EN_RETURN_SUCC: ³É¹¦, EN_RETURN_INVALID_LINE: Ê§°Ü
+@ è·å–ä¸¤ä¸ªåœ°é“ç«™é—´çš„æœ€å°è·ç¦»
+@ è¿”å›å€¼: EN_RETURN_SUCC: æˆåŠŸ, EN_RETURN_INVALID_LINE: å¤±è´¥
 */
 EN_RETURN_CODE GetSubwayStationDis(char* stationName1, char* stationName2, unsigned int &dis);
 
 /*
-@ ³õÊ¼»¯µØÌúÏßÂ·¹ÜÀí×ÓÏµÍ³
+@ åˆå§‹åŒ–åœ°é“çº¿è·¯ç®¡ç†å­ç³»ç»Ÿ
 */
 void InitSubwayLine();
 
 /*
-@ É¾³ıµØÌúÏß
-@ ·µ»ØÖµ: void
+@ åˆ é™¤åœ°é“çº¿
+@ è¿”å›å€¼: void
 */
 void DelSubwayLine();
 
 
 /*
-@ ÉèÖÃÄ¬ÈÏµØÌúÏßÂ·
-@ ·µ»ØÖµ: NULL
+@ è®¾ç½®é»˜è®¤åœ°é“çº¿è·¯
+@ è¿”å›å€¼: NULL
 */
 void SetDefaultLine();
 
 /*
-@ ´òÓ¡ËùÓĞµØÌúÏß
+@ æ‰“å°æ‰€æœ‰åœ°é“çº¿
 */
 void GetLineInfo(string &outStr);
 

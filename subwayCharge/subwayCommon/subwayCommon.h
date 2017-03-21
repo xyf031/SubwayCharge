@@ -1,14 +1,14 @@
-#ifndef __COMM_SPLIT_H__
+ï»¿#ifndef __COMM_SPLIT_H__
 #define __COMM_SPLIT_H__
 #include <vector>
 #include "list.h"
 using namespace std;
 
 /*
-@ ²ğ·Ö×Ö·û´®
-@ Èë²Î£º  splitStr, ´ı²ğ·Ö×Ö·û´®; intervalStr, ²ğ·Ö¼ä¸ô·û;
-@ ³ö²Î£º  splitArray, ²ğ·ÖºóµÄ×Ö·û´®Êı×é; 
-@ ·µ»ØÖµ: true, ²ğ·Ö³É¹¦; false, ²ğ·ÖÊ§°Ü;
+@ æ‹†åˆ†å­—ç¬¦ä¸²
+@ å…¥å‚ï¼š  splitStr, å¾…æ‹†åˆ†å­—ç¬¦ä¸²; intervalStr, æ‹†åˆ†é—´éš”ç¬¦;
+@ å‡ºå‚ï¼š  splitArray, æ‹†åˆ†åçš„å­—ç¬¦ä¸²æ•°ç»„; 
+@ è¿”å›å€¼: true, æ‹†åˆ†æˆåŠŸ; false, æ‹†åˆ†å¤±è´¥;
 */
 bool strSplit(vector<string> &splitArray, const string &splitStr, const char* intervalStr);
 

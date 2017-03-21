@@ -1,7 +1,7 @@
-#ifndef __SUBWAY_ERR_INFO_H__
+ï»¿#ifndef __SUBWAY_ERR_INFO_H__
 #define __SUBWAY_ERR_INFO_H__
 
-//·µ»ØÔ­ÒòÖµ
+//è¿”å›žåŽŸå› å€¼
 typedef enum
 {
     EN_RETURN_SUCC = 0,
@@ -25,10 +25,10 @@ typedef enum
 }EN_RETURN_CODE;
 
 /*
-@ ·µ»Ø´íÎó×Ö·û´®
-@ Èë²Î£ºenErrCode,´íÎóÂë; 
-@ ³ö²Î: ÎÞ
-@ ·µ»ØÖµ: ´íÎó×Ö·û´®;
+@ è¿”å›žé”™è¯¯å­—ç¬¦ä¸²
+@ å…¥å‚ï¼šenErrCode,é”™è¯¯ç ; 
+@ å‡ºå‚: æ— 
+@ è¿”å›žå€¼: é”™è¯¯å­—ç¬¦ä¸²;
 */
 char* GetErrStr(EN_RETURN_CODE enErrCode);
 #endif

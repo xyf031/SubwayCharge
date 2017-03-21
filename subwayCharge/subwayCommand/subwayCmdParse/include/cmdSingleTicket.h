@@ -1,9 +1,9 @@
-#ifndef __CMD_SINGLE_TICKET_H__
+ï»¿#ifndef __CMD_SINGLE_TICKET_H__
 #define __CMD_SINGLE_TICKET_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_SINGLE_TICKET_CMD_CODE = 0,
@@ -12,13 +12,13 @@ typedef enum
     EN_CMD_SINGLE_TICKET_BUTT
 }EN_CMD_SINGLE_TICKET_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdSingleTicket(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdSingleTicket(ST_CMD_SINGLE_TICKET &pCmdSingleTicket);
 
-//½âÂëº¯ÊıÉùÃ÷
+//è§£ç å‡½æ•°å£°æ˜
 int cmdSingleTicketDstStationParse(void* outPut, string* str);
 int cmdSingleTicketSrcStationParse(void* outPut, string* str);
 #endif

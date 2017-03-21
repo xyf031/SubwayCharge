@@ -1,9 +1,9 @@
-#ifndef __CMD_CREATE_CARD_H__
+ï»¿#ifndef __CMD_CREATE_CARD_H__
 #define __CMD_CREATE_CARD_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_CREATE_CARD_CMD_CODE = 0,
@@ -12,13 +12,13 @@ typedef enum
     EN_CMD_CREATE_CARD_BUTT
 }EN_CMD_CREATE_CARD_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdCreateCard(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdCreateCard(ST_CMD_CREATE_CARD &stCmdCreateCard);
 
-//½âÂëº¯ÊıÉùÃ÷
+//è§£ç å‡½æ•°å£°æ˜
 int cmdCreateCardChargeParse(void* outPut, string* str);
 
 #endif

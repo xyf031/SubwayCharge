@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdDeductProc.h"
@@ -24,21 +24,21 @@ CMD_DECODE_FUNC g_cmdDecodeFunc[EN_CMD_TYPE_BUTT] =
     parseCmdReset
 };
 
-//ÃüÁîÃû³Æ
+//å‘½ä»¤åç§°
 char g_CmdReturn[EN_CMD_TYPE_BUTT][64] = 
 {
-    "³Ë³µ¿¨¿Û·Ñ",
-    "¹ºÂòµ¥³ÌÆ±",
-    "°ìÀí³Ë³µ¿¨",
-    "³Ë³µ¿¨³äÖµ",
-    "²éÑ¯Ïû·Ñ¼ÇÂ¼",
-    "×¢Ïú³Ë³µ¿¨",
-    "²éÑ¯ÔËĞĞÏßÂ·",
-    "·Ç·¨ÃüÁî",
-    "ÖØÖÃÏµÍ³"
+    "ä¹˜è½¦å¡æ‰£è´¹",
+    "è´­ä¹°å•ç¨‹ç¥¨",
+    "åŠç†ä¹˜è½¦å¡",
+    "ä¹˜è½¦å¡å……å€¼",
+    "æŸ¥è¯¢æ¶ˆè´¹è®°å½•",
+    "æ³¨é”€ä¹˜è½¦å¡",
+    "æŸ¥è¯¢è¿è¡Œçº¿è·¯",
+    "éæ³•å‘½ä»¤",
+    "é‡ç½®ç³»ç»Ÿ"
 };
 
-//½âÎöÃüÁî
+//è§£æå‘½ä»¤
 int cmdParse(ST_COMM_CMD &stCommCmd, const char* cmdStr)
 {
     if(NULL == cmdStr)
@@ -66,7 +66,7 @@ int cmdParse(ST_COMM_CMD &stCommCmd, const char* cmdStr)
     return -1;
 }
 
-//»ñÈ¡ÃüÁîÃû³Æ×Ö·û´®
+//è·å–å‘½ä»¤åç§°å­—ç¬¦ä¸²
 char* GetCmdNameStr(EN_CMD_TYPE enCmd)
 {
     return g_CmdReturn[enCmd];

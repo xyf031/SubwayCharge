@@ -1,15 +1,15 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdFillCharge.h"
 using namespace std;
 
 
-//¹ºÂòµ¥³ÌÆ±ÃüÁîµÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//è´­ä¹°å•ç¨‹ç¥¨å‘½ä»¤çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdFillChargePattern("^[ ]{0,}[fF]{1}[ ]{1}[0-9]{1,}[ ]{1}[0-9]{1,}[ ]{0,}$"); 
 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdFillChargeFunc[EN_CMD_FILL_CHARGE_BUTT] = 
 {
     cmdCmdParse<ST_CMD_FILL_CHARGE>,
@@ -17,7 +17,7 @@ ELEMENT_FUNC g_cmdFillChargeFunc[EN_CMD_FILL_CHARGE_BUTT] =
     cmdFillChargeParse
 };
 
-//½âÂëº¯Êı
+//è§£ç å‡½æ•°
 int cmdFillChargeParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -26,7 +26,7 @@ int cmdFillChargeParse(void* outPut, string* str)
     return cmdChargeParse(&(Cmd->cardCharge), str);
 }
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdFillCharge(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_FILL_CHARGE>(cmd, pStCmd, g_cmdFillChargePattern, g_cmdFillChargeFunc);
@@ -38,7 +38,7 @@ int parseCmdFillCharge(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdFillCharge(ST_CMD_FILL_CHARGE &stCmdFillCharge)
 {
     cout<<"CMD:                 "<<stCmdFillCharge.cmd<<endl;

@@ -1,13 +1,13 @@
-#ifndef __CMD_RESET_PROC_H__
+ï»¿#ifndef __CMD_RESET_PROC_H__
 #define __CMD_RESET_PROC_H__
 #include "subwayGlobalDef.h"
 #include "subwayCmdParse/subwayCmdParse.h"
 
 /*
-@ ÖØÖÃÏµÍ³ÃüÁî
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ é‡ç½®ç³»ç»Ÿå‘½ä»¤
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcResetCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

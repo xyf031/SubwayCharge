@@ -1,4 +1,4 @@
-#ifndef __SUBWAY_CMD_PARSE_H__
+ï»¿#ifndef __SUBWAY_CMD_PARSE_H__
 #define __SUBWAY_CMD_PARSE_H__
 #include "subwayGlobalDef.h"
 
@@ -6,8 +6,8 @@
 #define MAX_CARD_TYPE_LENGTH 4
 #define MAX_STATION_NAME_LENGTH 32
 
-/*******************************Í¨ÓÃÀàĞÍ************************************************************/
-//ÃüÁîÀàĞÍÃ¶¾Ù
+/*******************************é€šç”¨ç±»å‹************************************************************/
+//å‘½ä»¤ç±»å‹æšä¸¾
 typedef enum
 {
     EN_CMD_TYPE_DEDUCT = 0,
@@ -22,8 +22,8 @@ typedef enum
     EN_CMD_TYPE_BUTT
 }EN_CMD_TYPE;
 
-/*******************************¸÷ÃüÁî½á¹¹************************************************************/
-//¿Û·ÑÃüÁî
+/*******************************å„å‘½ä»¤ç»“æ„************************************************************/
+//æ‰£è´¹å‘½ä»¤
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
@@ -34,7 +34,7 @@ typedef struct
     char exitStation[MAX_STATION_NAME_LENGTH];
 }ST_CMD_DEDUCT;
 
-//°ìÀíµ¥³Ì¿¨ÃüÁî
+//åŠç†å•ç¨‹å¡å‘½ä»¤
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
@@ -42,7 +42,7 @@ typedef struct
     char dstStation[MAX_STATION_NAME_LENGTH];
 }ST_CMD_SINGLE_TICKET;
 
-//°ìÀíÆÕÍ¨¿¨»òÀÏÄê¿¨ÃüÁî
+//åŠç†æ™®é€šå¡æˆ–è€å¹´å¡å‘½ä»¤
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
@@ -51,7 +51,7 @@ typedef struct
     int cardCharge;
 }ST_CMD_CREATE_CARD;
 
-//³äÖµÃüÁî
+//å……å€¼å‘½ä»¤
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
@@ -59,34 +59,34 @@ typedef struct
     int cardCharge;
 }ST_CMD_FILL_CHARGE;
 
-//²éÑ¯ÀúÊ·Ïû·ÑÃüÁî
+//æŸ¥è¯¢å†å²æ¶ˆè´¹å‘½ä»¤
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
     int cardNo;
 }ST_CMD_QUERY_HIS;
 
-//Ïú»Ù¿¨
+//é”€æ¯å¡
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
     int cardNo;
 }ST_CMD_DESTROY_CARD;
 
-//²éÑ¯ÏßÂ·
+//æŸ¥è¯¢çº¿è·¯
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
 }ST_CMD_QUERY_LINE;
 
-//ÖØÖÃÏµÍ³
+//é‡ç½®ç³»ç»Ÿ
 typedef struct
 {
     char cmd[MAX_CMD_LENGTH];
 }ST_CMD_RESET;
 
-/*******************************½âÎöºóµÄÃüÁî½á¹¹******************************************************/
-//ÃüÁîÁªºÏ
+/*******************************è§£æåçš„å‘½ä»¤ç»“æ„******************************************************/
+//å‘½ä»¤è”åˆ
 typedef union
 {
     ST_CMD_DEDUCT stCmdDeduct;
@@ -97,7 +97,7 @@ typedef union
     ST_CMD_QUERY_LINE stCmdQueryLine;
 }UN_CMD;
 
-//Í¨ÓÃÃüÁî½á¹¹
+//é€šç”¨å‘½ä»¤ç»“æ„
 typedef struct
 {
     EN_CMD_TYPE enCmdType;
@@ -105,10 +105,10 @@ typedef struct
 }ST_COMM_CMD;
 
 
-/*******************************ÃüÁî½âÂëº¯ÊıÈë¿Ú******************************************************/
-//½âÂëÃüÁîº¯Êı
+/*******************************å‘½ä»¤è§£ç å‡½æ•°å…¥å£******************************************************/
+//è§£ç å‘½ä»¤å‡½æ•°
 int cmdParse(ST_COMM_CMD &stCommCmd, const char* cmdStr);
 
-//»ñÈ¡ÃüÁîÃû³Æ×Ö·û´®
+//è·å–å‘½ä»¤åç§°å­—ç¬¦ä¸²
 char* GetCmdNameStr(EN_CMD_TYPE enCmd);
 #endif

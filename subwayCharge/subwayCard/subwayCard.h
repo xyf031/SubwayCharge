@@ -1,23 +1,23 @@
-#ifndef __SUBWAY_CARD_H__
+ï»¿#ifndef __SUBWAY_CARD_H__
 #define __SUBWAY_CARD_H__
 #include "subwayError.h"
 #include "subwayGlobalDef.h"
 #define MAX_STATION_NAME_LENGTH 32
 
 
-//×î¶àÔÊÐíÏµÍ³¿ª100ÕÅµØÌú¿¨
+//æœ€å¤šå…è®¸ç³»ç»Ÿå¼€100å¼ åœ°é“å¡
 #define MAX_CARD_NUM 100
 
-//×î´óÓà¶îÖµ
+//æœ€å¤§ä½™é¢å€¼
 #define MAX_BALANCE 999
 
-//½¨Òé×îÐ¡Óà¶îÖµ
+//å»ºè®®æœ€å°ä½™é¢å€¼
 #define MIN_BALANCE 20
 
-// ÀúÊ·¼ÇÂ¼×î´óÌõÊý
+// åŽ†å²è®°å½•æœ€å¤§æ¡æ•°
 #define MAX_HISTORY 20
 
-//µØÌú¿¨ÀàÐÍ
+//åœ°é“å¡ç±»åž‹
 typedef enum
 {
     EN_CARD_TYPE_SINGLE = 0,
@@ -26,7 +26,7 @@ typedef enum
     EN_CARD_TYPE_BUTT
 }EN_CARD_TYPE;
 
-// ÀúÊ·¼ÇÂ¼
+// åŽ†å²è®°å½•
 typedef struct hisNode
 {
     ST_SUBWAY_TIME enterTime;
@@ -37,7 +37,7 @@ typedef struct hisNode
     hisNode* next;
 }* pHisNode;
 
-//µØÌú¿¨
+//åœ°é“å¡
 typedef struct  
 {
 	unsigned int cardNo;
@@ -51,83 +51,83 @@ typedef struct
 
 
 /*
-@ ³õÊ¼»¯ËùÓÐ¿¨ÐÅÏ¢
-@ ·µ»ØÖµ: ÎÞ
+@ åˆå§‹åŒ–æ‰€æœ‰å¡ä¿¡æ¯
+@ è¿”å›žå€¼: æ— 
 */
 void InitCardManagerInfo();
 
 /*
-@ ¿ª¿¨£¬·ÖÅä¿¨ºÅºÍ¿¨ÐÅÏ¢
-@ Èë²Î£ºenCard,¿¨ÀàÐÍ; charge: ³äÖµ
-@ ³ö²Î: cardNo, ·ÖÅäµÄ¿¨ºÅ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬·ÖÅä³É¹¦; EN_RETURN_CARD_OVERLOW, ·ÖÅäÊ§°Ü;
+@ å¼€å¡ï¼Œåˆ†é…å¡å·å’Œå¡ä¿¡æ¯
+@ å…¥å‚ï¼šenCard,å¡ç±»åž‹; charge: å……å€¼
+@ å‡ºå‚: cardNo, åˆ†é…çš„å¡å·
+@ è¿”å›žå€¼: EN_RETURN_SUCCï¼Œåˆ†é…æˆåŠŸ; EN_RETURN_CARD_OVERLOW, åˆ†é…å¤±è´¥;
 */
 EN_RETURN_CODE AssignCard(unsigned int &cardNo, EN_CARD_TYPE enCard, unsigned int charge);
 
 /*
-@ ³äÖµ
-@ Èë²Î£ºcardNo,¿¨ºÅ; recharge: ³äÖµ
-@ ³ö²Î: ÎÞ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; ÆäËû, Ê§°Ü;
+@ å……å€¼
+@ å…¥å‚ï¼šcardNo,å¡å·; recharge: å……å€¼
+@ å‡ºå‚: æ— 
+@ è¿”å›žå€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; å…¶ä»–, å¤±è´¥;
 */
 EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge);
 
 /*
-@ »ñÈ¡¿¨ÐÅÏ¢
-@ Èë²Î£ºcardNo,¿¨ºÅ; 
-@ ³ö²Î: balance: Óà¶î
-        enCard:  ¿¨ÀàÐÍ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INVALID_CARD, Ê§°Ü;
+@ èŽ·å–å¡ä¿¡æ¯
+@ å…¥å‚ï¼šcardNo,å¡å·; 
+@ å‡ºå‚: balance: ä½™é¢
+        enCard:  å¡ç±»åž‹
+@ è¿”å›žå€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INVALID_CARD, å¤±è´¥;
 */
 EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_TYPE &enCard);
 
 /*
-@ ¿¨¿Û·Ñ
-@ Èë²Î£ºcardNo,¿¨ºÅ; enCard, ¿¨ÀàÐÍ; deductPrice, ¿Û·ÑÆ±¼Û
-@ ³ö²Î: balance, ¿Û·ÑºóµÄÓà¶î;
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INVALID_CARD, EN_RETURN_BALANCE_NOT_ENOUGH, Ê§°Ü;
+@ å¡æ‰£è´¹
+@ å…¥å‚ï¼šcardNo,å¡å·; enCard, å¡ç±»åž‹; deductPrice, æ‰£è´¹ç¥¨ä»·
+@ å‡ºå‚: balance, æ‰£è´¹åŽçš„ä½™é¢;
+@ è¿”å›žå€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INVALID_CARD, EN_RETURN_BALANCE_NOT_ENOUGH, å¤±è´¥;
 */
 EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int deductPrice, unsigned int &balance);
 
 /*
-@ ¸ù¾Ý¿¨ÀàÐÍ×Ö·û´®, Ê¶±ð¿¨ÀàÐÍ
-@ Èë²Î£ºcardType,      ¿¨ÀàÐÍ×Ö·û´®; 
-@ ³ö²Î: enCard,        ¿¨ÀàÐÍ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INPUT_INVALID_CARDTYPE, Ê§°Ü;
+@ æ ¹æ®å¡ç±»åž‹å­—ç¬¦ä¸², è¯†åˆ«å¡ç±»åž‹
+@ å…¥å‚ï¼šcardType,      å¡ç±»åž‹å­—ç¬¦ä¸²; 
+@ å‡ºå‚: enCard,        å¡ç±»åž‹
+@ è¿”å›žå€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INPUT_INVALID_CARDTYPE, å¤±è´¥;
 */
 EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard);
 
 /*
-@ É¾³ý¿¨ÐÅÏ¢
-@ Èë²Î£ºcardNo,¿¨ºÅ; 
-@ ³ö²Î: ÎÞ
-@ ·µ»ØÖµ: 0£¬³É¹¦; -1, Ê§°Ü;
+@ åˆ é™¤å¡ä¿¡æ¯
+@ å…¥å‚ï¼šcardNo,å¡å·; 
+@ å‡ºå‚: æ— 
+@ è¿”å›žå€¼: 0ï¼ŒæˆåŠŸ; -1, å¤±è´¥;
 */
 int DeleteCard(unsigned int cardNo);
 
 /*
-@ »ñÈ¡¿¨ÀàÐÍ×Ö·û´®
-@ Èë²Î£ºenCard,¿¨ÀàÐÍ; 
-@ ³ö²Î: ÎÞ
-@ ·µ»ØÖµ: ¿¨ÀàÐÍ×Ö·û´®£¬±ÈÈç"ÆÕÍ¨¿¨";
+@ èŽ·å–å¡ç±»åž‹å­—ç¬¦ä¸²
+@ å…¥å‚ï¼šenCard,å¡ç±»åž‹; 
+@ å‡ºå‚: æ— 
+@ è¿”å›žå€¼: å¡ç±»åž‹å­—ç¬¦ä¸²ï¼Œæ¯”å¦‚"æ™®é€šå¡";
 */
 char* GetCardTypeStr(EN_CARD_TYPE enCard);
 
 
 /*
-@ ²åÈëÀúÊ·¼ÇÂ¼
-@ Èë²Î£º¿¨ºÅ¡¢Ïû·Ñ½ð¶î¡¢ÈëÕ¾Ê±¼ä¡¢ÈëÕ¾Õ¾Ãû¡¢³öÕ¾Ê±¼ä¡¢³öÕ¾Õ¾Ãû¡£
-@ ³ö²Î£ºÎÞ
-@ ·µ»ØÖµ£ºEN_RETURN_SUCC ³É¹¦¡¢EN_RETURN_INNER_ERR ÄÚ´æmallocÊ§°Ü¡£
+@ æ’å…¥åŽ†å²è®°å½•
+@ å…¥å‚ï¼šå¡å·ã€æ¶ˆè´¹é‡‘é¢ã€å…¥ç«™æ—¶é—´ã€å…¥ç«™ç«™åã€å‡ºç«™æ—¶é—´ã€å‡ºç«™ç«™åã€‚
+@ å‡ºå‚ï¼šæ— 
+@ è¿”å›žå€¼ï¼šEN_RETURN_SUCC æˆåŠŸã€EN_RETURN_INNER_ERR å†…å­˜mallocå¤±è´¥ã€‚
 */
 EN_RETURN_CODE InsertHistory(unsigned int cardNo, unsigned int deductPrice, ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime, const char* enterStation, const char* exitStation);
 
 
 /*
-@ ²éÑ¯ÀúÊ·¼ÇÂ¼
-@ Èë²Î£º¿¨ºÅ£¬´ý´æ´¢×Ö·û´®
-@ ³ö²Î£º×îÖÕÊä³öµÄ×Ö·û´®
-@ ·µ»ØÖµ£º³É¹¦¡¢ÎÞÐ§¿¨
+@ æŸ¥è¯¢åŽ†å²è®°å½•
+@ å…¥å‚ï¼šå¡å·ï¼Œå¾…å­˜å‚¨å­—ç¬¦ä¸²
+@ å‡ºå‚ï¼šæœ€ç»ˆè¾“å‡ºçš„å­—ç¬¦ä¸²
+@ è¿”å›žå€¼ï¼šæˆåŠŸã€æ— æ•ˆå¡
 */
 EN_RETURN_CODE QueryHistory(unsigned int cardNo, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

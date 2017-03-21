@@ -1,4 +1,4 @@
-#ifndef __CMD_GLOBAL_H__
+ï»¿#ifndef __CMD_GLOBAL_H__
 #define __CMD_GLOBAL_H__
 #include <string>
 #include <vector>
@@ -9,20 +9,20 @@
 #include "subwayCmdParse\subwayCmdParse.h"
 using namespace std;
 
-//Ã¿¸öĞÅÔªµÄ½âÂëº¯Êı
+//æ¯ä¸ªä¿¡å…ƒçš„è§£ç å‡½æ•°
 typedef int (*ELEMENT_FUNC)(void* outPut, string* str);
 
-//ÃüÁîµÄ½âÂëº¯ÊıÀàĞÍ
+//å‘½ä»¤çš„è§£ç å‡½æ•°ç±»å‹
 typedef int (*CMD_DECODE_FUNC)(string &cmd, void* pStCmd);
 
-//¼ì²éÈë²ÎÊÇ·ñÂú×ãÒªÇó
+//æ£€æŸ¥å…¥å‚æ˜¯å¦æ»¡è¶³è¦æ±‚
 #define CHECK_INPUT_PARA(outPutPtr, strInput) \
     if((NULL == (str)) || (NULL == (outPut))) \
     {\
         return -1;\
     }
 
-//Í¨ÓÃ½âÂëÃüÁîÂë
+//é€šç”¨è§£ç å‘½ä»¤ç 
 template <typename T>
 int cmdCmdParse(void* outPut, string* str)
 {
@@ -32,7 +32,7 @@ int cmdCmdParse(void* outPut, string* str)
     return memcpy_s(Cmd->cmd, MAX_CMD_LENGTH, str->c_str(), str->length());
 }
 
-//Í¨ÓÃ½âÂë¿¨ºÅ
+//é€šç”¨è§£ç å¡å·
 template <typename T>
 int cmdCardNoParse(void* outPut, string* str)
 {
@@ -43,7 +43,7 @@ int cmdCardNoParse(void* outPut, string* str)
     return 0;
 }
 
-//Í¨ÓÃ½âÂë¿¨ÀàĞÍ
+//é€šç”¨è§£ç å¡ç±»å‹
 template <typename T>
 int cmdCardTypeParse(void* outPut, string* str)
 {
@@ -53,7 +53,7 @@ int cmdCardTypeParse(void* outPut, string* str)
     return memcpy_s(Cmd->cardType, MAX_CARD_TYPE_LENGTH, str->c_str(), str->length());
 }
 
-//Í¨ÓÃ½âÂëÊ±¼ä
+//é€šç”¨è§£ç æ—¶é—´
 static inline int cmdTimeParse(ST_SUBWAY_TIME *pTime, string* str)
 {
     vector<string> tokens;
@@ -69,20 +69,20 @@ static inline int cmdTimeParse(ST_SUBWAY_TIME *pTime, string* str)
     return 0;
 }
 
-//Í¨ÓÃ½âÂëµØÌúÕ¾Ãû
+//é€šç”¨è§£ç åœ°é“ç«™å
 static inline int cmdStationParse(char station[MAX_STATION_NAME_LENGTH], string* str)
 {
     return memcpy_s(station, MAX_STATION_NAME_LENGTH, str->c_str(), str->length());
 }
 
-//Í¨ÓÃ½âÂëÇ®¶î¶È
+//é€šç”¨è§£ç é’±é¢åº¦
 static inline int cmdChargeParse(int* charge, string* str)
 {
     *charge = atoi(str->c_str());
     return 0;
 }
 
-//Ê¹ÓÃÕıÔò±í´ïÊ½¼ì²éÃüÁîÊÇ·ñ·ûºÏ¹æ·¶
+//ä½¿ç”¨æ­£åˆ™è¡¨è¾¾å¼æ£€æŸ¥å‘½ä»¤æ˜¯å¦ç¬¦åˆè§„èŒƒ
 static inline int checkCmd(string &cmd, string &pattern)
 {
     std::smatch results;
@@ -97,7 +97,7 @@ static inline int checkCmd(string &cmd, string &pattern)
     return -1;
 }
 
-//½âÂëÃüÁîĞĞ
+//è§£ç å‘½ä»¤è¡Œ
 template <typename T>
 int parseCmd(string &cmd, void* pStCmd, string pattern, ELEMENT_FUNC func[])
 {

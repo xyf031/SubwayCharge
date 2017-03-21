@@ -1,15 +1,15 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdSingleTicket.h"
 using namespace std;
 
 
-//¹ºÂòµ¥³ÌÆ±ÃüÁîµÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//è´­ä¹°å•ç¨‹ç¥¨å‘½ä»¤çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdSingleTicketPattern("^[ ]{0,}[sS]{1}[ ]{1}[sS]{1}[0-9]{1,}[ ]{1}[sS]{1}[0-9]{1,}[ ]{0,}$"); 
 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdSingleTicketFunc[EN_CMD_SINGLE_TICKET_BUTT] = 
 {
     cmdCmdParse<ST_CMD_SINGLE_TICKET>,
@@ -17,7 +17,7 @@ ELEMENT_FUNC g_cmdSingleTicketFunc[EN_CMD_SINGLE_TICKET_BUTT] =
     cmdSingleTicketDstStationParse,
 };
 
-//½âÂë½øÕ¾Õ¾µãÃû³Æ
+//è§£ç è¿›ç«™ç«™ç‚¹åç§°
 int cmdSingleTicketSrcStationParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -26,7 +26,7 @@ int cmdSingleTicketSrcStationParse(void* outPut, string* str)
     return cmdStationParse(deductCmd->srcStation, str);
 }
 
-//½âÂë³öÕ¾Õ¾µãÃû³Æ
+//è§£ç å‡ºç«™ç«™ç‚¹åç§°
 int cmdSingleTicketDstStationParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -35,7 +35,7 @@ int cmdSingleTicketDstStationParse(void* outPut, string* str)
     return cmdStationParse(deductCmd->dstStation, str);
 }
 
-//½âÂë¿Û·ÑÃüÁî
+//è§£ç æ‰£è´¹å‘½ä»¤
 int parseCmdSingleTicket(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_SINGLE_TICKET>(cmd, pStCmd, g_cmdSingleTicketPattern, g_cmdSingleTicketFunc);
@@ -48,7 +48,7 @@ int parseCmdSingleTicket(string &cmd, void* pStCmd)
 }
 
 
-//´òÓ¡½âÂëºóµÄ¿Û·ÑÃüÁî
+//æ‰“å°è§£ç åçš„æ‰£è´¹å‘½ä»¤
 void printfCmdSingleTicket(ST_CMD_SINGLE_TICKET &stCmdSingleTicket)
 {
     cout<<"CMD:                 "<<stCmdSingleTicket.cmd<<endl;

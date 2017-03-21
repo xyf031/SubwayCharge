@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -13,14 +13,14 @@
 using namespace std;
 
 /*
-@ ²éÑ¯µØÌúÏß
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ æŸ¥è¯¢åœ°é“çº¿
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcQueryLineCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //²éÑ¯ËùÓĞµØÌúÏß GetLineInfo
+    //æŸ¥è¯¢æ‰€æœ‰åœ°é“çº¿ GetLineInfo
     string outStr;
     GetLineInfo(outStr);
     const char * cur = outStr.c_str();

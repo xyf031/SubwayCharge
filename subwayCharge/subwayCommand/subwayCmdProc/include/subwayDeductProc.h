@@ -1,13 +1,13 @@
-#ifndef __CMD_DEDUCT_PROC_H__
+ï»¿#ifndef __CMD_DEDUCT_PROC_H__
 #define __CMD_DEDUCT_PROC_H__
 #include "subwayGlobalDef.h"
 #include "subwayCmdParse/subwayCmdParse.h"
 
 /*
-@ ´¦Àí¿Û·ÑÃüÁî
-@ Èë²Î£ºstCmdDeduct, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: void
+@ å¤„ç†æ‰£è´¹å‘½ä»¤
+@ å…¥å‚ï¼šstCmdDeduct, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: void
 */
 void ProcDeductCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

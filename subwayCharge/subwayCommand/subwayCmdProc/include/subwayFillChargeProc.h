@@ -1,13 +1,13 @@
-#ifndef __CMD_FILL_CHARGE_PROC_H__
+ï»¿#ifndef __CMD_FILL_CHARGE_PROC_H__
 #define __CMD_FILL_CHARGE_PROC_H__
 #include "subwayGlobalDef.h"
 #include "subwayCmdParse/subwayCmdParse.h"
 
 /*
-@ ³äÖµÃüÁî
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ å……å€¼å‘½ä»¤
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcFillChargeCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

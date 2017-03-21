@@ -1,19 +1,19 @@
-#ifndef __CMD_RESET_H__
+ï»¿#ifndef __CMD_RESET_H__
 #define __CMD_RESET_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_RESET_CMD_CODE = 0,
     EN_CMD_RESET_CMD_BUTT
 }EN_CMD_RESET_CMD_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdReset(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdReset(ST_CMD_RESET &pCmdReset);
 
 #endif

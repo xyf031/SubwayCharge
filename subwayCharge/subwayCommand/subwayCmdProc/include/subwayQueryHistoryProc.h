@@ -1,13 +1,13 @@
-#ifndef __CMD_QUERY_HISTORY_PROC_H__
+ï»¿#ifndef __CMD_QUERY_HISTORY_PROC_H__
 #define __CMD_QUERY_HISTORY_PROC_H__
 #include "subwayGlobalDef.h"
 #include "subwayCmdParse/subwayCmdParse.h"
 
 /*
-@ ²éÑ¯ÀúÊ·Ïû·Ñ¼ÇÂ¼
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ æŸ¥è¯¢å†å²æ¶ˆè´¹è®°å½•
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcQueryHistoryCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

@@ -1,4 +1,4 @@
-#ifndef __SUBWAY_SOCKET_H__
+ï»¿#ifndef __SUBWAY_SOCKET_H__
 #define __SUBWAY_SOCKET_H__
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -6,19 +6,19 @@
 typedef void (*CMD_PROC_ENTER_FUNC)(const char cmdStr[MAX_RECEIVE_BUFFER_LENGTH], char returnStr[MAX_SEND_BUFFER_LENGTH]);
 
 /*
-@ ³õÊ¼»¯SocketÍ¨ĞÅ»·¾³
+@ åˆå§‹åŒ–Socketé€šä¿¡ç¯å¢ƒ
 */
 void InitSusbwaySocket(CMD_PROC_ENTER_FUNC func);
 
 /*
-@ ³õÊ¼»¯¼àÌısocket£¬Æô¶¯¼àÌı
-@ ·µ»ØÖµ: 0, ³É¹¦; -1, Ê§°Ü£º
+@ åˆå§‹åŒ–ç›‘å¬socketï¼Œå¯åŠ¨ç›‘å¬
+@ è¿”å›å€¼: 0, æˆåŠŸ; -1, å¤±è´¥ï¼š
 */
 int ListenAndAcceptClient();
 
 /*
-@ ½ÓÊÕ¿Í»§¶ËµÄÊı¾İ, ²¢µ÷ÓÃÏûÏ¢´¦Àí½Ó¿Ú½øĞĞ´¦Àí
-@ ·µ»ØÖµ: void
+@ æ¥æ”¶å®¢æˆ·ç«¯çš„æ•°æ®, å¹¶è°ƒç”¨æ¶ˆæ¯å¤„ç†æ¥å£è¿›è¡Œå¤„ç†
+@ è¿”å›å€¼: void
 */
 void ReceiveCmdFlow();
 

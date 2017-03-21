@@ -1,14 +1,14 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdCreateCard.h"
 using namespace std;
 
-//°ìÀí³Ë³µ¿¨ÃüÁîµÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//åŠç†ä¹˜è½¦å¡å‘½ä»¤çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdCreateCardPattern("^[ ]{0,}[bB]{1}[ ]{1}[a-zA-Z]{1}[ ]{1}[0-9]{1,}[ ]{0,}$"); 
 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdCreateCardFunc[EN_CMD_CREATE_CARD_BUTT] = 
 {
     cmdCmdParse<ST_CMD_CREATE_CARD>,
@@ -17,7 +17,7 @@ ELEMENT_FUNC g_cmdCreateCardFunc[EN_CMD_CREATE_CARD_BUTT] =
 };
 
 
-//½âÂë¿Û·ÑÃüÁîÖĞµÄÔ¤³äÖµ½ğ¶î
+//è§£ç æ‰£è´¹å‘½ä»¤ä¸­çš„é¢„å……å€¼é‡‘é¢
 int cmdCreateCardChargeParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -26,7 +26,7 @@ int cmdCreateCardChargeParse(void* outPut, string* str)
     return cmdChargeParse(&(Cmd->cardCharge), str);
 }
 
-//½âÂë¿Û·ÑÃüÁî
+//è§£ç æ‰£è´¹å‘½ä»¤
 int parseCmdCreateCard(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_CREATE_CARD>(cmd, pStCmd, g_cmdCreateCardPattern, g_cmdCreateCardFunc);
@@ -38,7 +38,7 @@ int parseCmdCreateCard(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÂëºóµÄ¿Û·ÑÃüÁî
+//æ‰“å°è§£ç åçš„æ‰£è´¹å‘½ä»¤
 void printfCmdCreateCard(ST_CMD_CREATE_CARD &stCmdCreateCard)
 {
     cout<<"CMD:                 "<<stCmdCreateCard.cmd<<endl;

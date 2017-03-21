@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
 #include "include/basePrice.h"
@@ -8,14 +8,14 @@
 using namespace std;
 
 /*
-@ »ñÈ¡¿Û·ÑÆ±¼Û£¬¼¸ÖÖÇé¿ö;
-@   1. Àï³ÌÊýÎª0£¬°´Ê±¼äÊÕ·Ñ;
-@   2. Àï³ÌÊý²»Îª0;
-@ ·µ»ØÖµ: 
+@ èŽ·å–æ‰£è´¹ç¥¨ä»·ï¼Œå‡ ç§æƒ…å†µ;
+@   1. é‡Œç¨‹æ•°ä¸º0ï¼ŒæŒ‰æ—¶é—´æ”¶è´¹;
+@   2. é‡Œç¨‹æ•°ä¸ä¸º0;
+@ è¿”å›žå€¼: 
 */
 bool isDiscount(ST_SUBWAY_TIME &enterTime)
 {
-    //ÅÐ¶Ï½øÕ¾Ê±¼äÊÇ·ñÔÚ [10:00, 15:00]
+    //åˆ¤æ–­è¿›ç«™æ—¶é—´æ˜¯å¦åœ¨ [10:00, 15:00]
     if (enterTime.hour >= 10 && enterTime.hour <= 14) 
         return true;
 
@@ -25,7 +25,7 @@ bool isDiscount(ST_SUBWAY_TIME &enterTime)
 
 int timeDiffMinutes(ST_SUBWAY_TIME &enterTime, ST_SUBWAY_TIME &exitTime)
 {
-    // ¼ÆËã½ø³öÕ¾Ö®¼äµÄÊ±¼ä²î£¬ÒÔminuteÎªµ¥Î»¡£
+    // è®¡ç®—è¿›å‡ºç«™ä¹‹é—´çš„æ—¶é—´å·®ï¼Œä»¥minuteä¸ºå•ä½ã€‚
     int minSum = 0;
     minSum += 60 * (exitTime.hour - enterTime.hour);
     minSum += exitTime.minutes - enterTime.minutes;
@@ -33,10 +33,10 @@ int timeDiffMinutes(ST_SUBWAY_TIME &enterTime, ST_SUBWAY_TIME &exitTime)
 }
 
 /*
-@ »ñÈ¡¿Û·ÑÆ±¼Û£¬¼¸ÖÖÇé¿ö;
-@   1. Àï³ÌÊýÎª0£¬°´Ê±¼äÊÕ·Ñ;
-@   2. Àï³ÌÊý²»Îª0;
-@ ·µ»ØÖµ: 
+@ èŽ·å–æ‰£è´¹ç¥¨ä»·ï¼Œå‡ ç§æƒ…å†µ;
+@   1. é‡Œç¨‹æ•°ä¸º0ï¼ŒæŒ‰æ—¶é—´æ”¶è´¹;
+@   2. é‡Œç¨‹æ•°ä¸ä¸º0;
+@ è¿”å›žå€¼: 
 */
 EN_RETURN_CODE GetDeductPrice(EN_CARD_TYPE enCardType, unsigned int balance, unsigned int meters, ST_SUBWAY_TIME &enterTime, ST_SUBWAY_TIME &exitTime, unsigned int &deductPrice)
 {

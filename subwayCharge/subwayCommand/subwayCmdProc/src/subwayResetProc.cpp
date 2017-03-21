@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -12,15 +12,15 @@
 using namespace std;
 
 /*
-@ ÖØÖÃÏµÍ³ÃüÁî
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ é‡ç½®ç³»ç»Ÿå‘½ä»¤
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcResetCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
     InitCardManagerInfo();
-    //Êä³ö×Ö·û´®
+    //è¾“å‡ºå­—ç¬¦ä¸²
     GetOutputResultStr(EN_CMD_TYPE_RESET, EN_RETURN_SUCC, 0, EN_CARD_TYPE_BUTT, 0, returnStr);
     return;
 }

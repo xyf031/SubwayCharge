@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include  <sstream>
 #include "subwayMacro.h"
@@ -6,8 +6,8 @@
 using namespace std;
 
 /*
-@ »ñÈ¡»ù´¡Æ±¼Û, ¼´°´½øÕ¾µãÓë³öÕ¾µãÖ®¼äµÄ×î¶ÌÀï³Ì·Ö¼¶¼ÆËã
-@ -1, ²éÑ¯»ù´¡Æ±¼ÛÊ§°Ü; ÆäËû, »ù´¡Æ±¼Û
+@ è·å–åŸºç¡€ç¥¨ä»·, å³æŒ‰è¿›ç«™ç‚¹ä¸å‡ºç«™ç‚¹ä¹‹é—´çš„æœ€çŸ­é‡Œç¨‹åˆ†çº§è®¡ç®—
+@ -1, æŸ¥è¯¢åŸºç¡€ç¥¨ä»·å¤±è´¥; å…¶ä»–, åŸºç¡€ç¥¨ä»·
 */
 int GetBasePrice(unsigned int meters)
 {

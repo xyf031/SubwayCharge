@@ -1,11 +1,11 @@
-#ifndef __SUBWAY_CONTROL_H__
+ï»¿#ifndef __SUBWAY_CONTROL_H__
 #define __SUBWAY_CONTROL_H__
 #include "subwayGlobalDef.h"
 /*
-@ ´¦ÀíÃüÁîÈë¿Ú
-@ Èë²Î£ºcmdStr, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr, ·µ»ØÃüÁî
-@ ·µ»ØÖµ: ÎŞ
+@ å¤„ç†å‘½ä»¤å…¥å£
+@ å…¥å‚ï¼šcmdStr, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr, è¿”å›å‘½ä»¤
+@ è¿”å›å€¼: æ— 
 */
 void ProcCmdEnter(const char cmdStr[MAX_RECEIVE_BUFFER_LENGTH], char returnStr[MAX_SEND_BUFFER_LENGTH]);
 

@@ -1,19 +1,19 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdReset.h"
 using namespace std;
 
-//ÖØÖÃÏµÍ³µÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//é‡ç½®ç³»ç»Ÿçš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdResetPattern("^[ ]{0,}[rR]{1}[ ]{0,}$"); 
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdResetFunc[EN_CMD_RESET_CMD_BUTT] = 
 {
     cmdCmdParse<ST_CMD_RESET>
 };
 
-//²éÑ¯ÏßÂ·ÃüÁî
+//æŸ¥è¯¢çº¿è·¯å‘½ä»¤
 int parseCmdReset(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_RESET>(cmd, pStCmd, g_cmdResetPattern, g_cmdResetFunc);
@@ -25,7 +25,7 @@ int parseCmdReset(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdReset(ST_CMD_RESET &stReset)
 {
     cout<<"CMD:                 "<<stReset.cmd<<endl;

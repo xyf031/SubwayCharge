@@ -1,11 +1,11 @@
-#ifndef __SUBWAY_GLOBAL_H__
+ï»¿#ifndef __SUBWAY_GLOBAL_H__
 #define __SUBWAY_GLOBAL_H__
 
-//SocketÍ¨ĞÅ½ÓÊÕºÍ·¢ËÍ»º´æ×î´ó³¤¶È
+//Socketé€šä¿¡æ¥æ”¶å’Œå‘é€ç¼“å­˜æœ€å¤§é•¿åº¦
 #define MAX_RECEIVE_BUFFER_LENGTH 2048
 #define MAX_SEND_BUFFER_LENGTH 2048
 
-//µØÌúÏµÍ³Ê±¼ä
+//åœ°é“ç³»ç»Ÿæ—¶é—´
 typedef struct
 {
     int hour;

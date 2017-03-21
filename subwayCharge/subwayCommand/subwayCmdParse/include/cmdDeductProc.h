@@ -1,9 +1,9 @@
-#ifndef __CMD_DEDUCT_H__
+ï»¿#ifndef __CMD_DEDUCT_H__
 #define __CMD_DEDUCT_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_DEDUCT_CMD_CODE = 0,
@@ -15,13 +15,13 @@ typedef enum
     EN_CMD_DEDUCT_BUTT
 }EN_CMD_DEDUCT_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdDeduct(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdDeduct(ST_CMD_DEDUCT &stCmdDeduct);
 
-//½âÂëº¯ÊıÉùÃ÷
+//è§£ç å‡½æ•°å£°æ˜
 int cmdDeductEnterTimeParse(void* outPut, string* str);
 int cmdDeductEnterStationParse(void* outPut, string* str);
 int cmdDeductExitTimeParse(void* outPut, string* str);

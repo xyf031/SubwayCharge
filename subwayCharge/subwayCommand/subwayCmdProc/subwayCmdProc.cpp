@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -19,7 +19,7 @@ typedef void (*CMD_PROC_FUNC)(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENG
 void ProcInvalidCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH]);
 
 
-//ÃüÁî´¦Àí·Ö·¢¾ØÕó
+//å‘½ä»¤å¤„ç†åˆ†å‘çŸ©é˜µ
 CMD_PROC_FUNC g_cmdProcFuncList[EN_CMD_TYPE_BUTT] = 
 {
     ProcDeductCmd,
@@ -34,24 +34,24 @@ CMD_PROC_FUNC g_cmdProcFuncList[EN_CMD_TYPE_BUTT] =
 };
 
 /*
-@ ÎŞĞ§ÃüÁî´¦Àí
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ æ— æ•ˆå‘½ä»¤å¤„ç†
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcInvalidCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    //Êä³ö×Ö·û´®
+    //è¾“å‡ºå­—ç¬¦ä¸²
     GetOutputResultStr(EN_CMD_TYPE_INVALID_CMD, EN_RETURN_INVALID_CMD, 0, EN_CARD_TYPE_BUTT, 0, returnStr);
     return;
 }
 
 
 /*
-@ ´¦ÀíÃüÁîÈë¿Ú, ¸ºÔğËùÓĞÃüÁîµÄ·Ö·¢
-@ Èë²Î£ºcmdStr, ÃüÁîÄÚÈİ
-@ ³ö²Î: ÎŞ
-@ ·µ»ØÖµ: ÎŞ
+@ å¤„ç†å‘½ä»¤å…¥å£, è´Ÿè´£æ‰€æœ‰å‘½ä»¤çš„åˆ†å‘
+@ å…¥å‚ï¼šcmdStr, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: æ— 
+@ è¿”å›å€¼: æ— 
 */
 void ProcCmdEnter(const char cmdStr[MAX_RECEIVE_BUFFER_LENGTH], char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
@@ -61,7 +61,7 @@ void ProcCmdEnter(const char cmdStr[MAX_RECEIVE_BUFFER_LENGTH], char returnStr[M
 
     do
     {
-        //Èç¹ûÃüÁîĞĞÖĞ´æÔÚ»Ø³µ»»ĞĞ·û£¬»áÓ°ÏìÕıÔò±í´ïÊ½, ¹ÊÏŞÖÆÒ»´ÎÖ»ÄÜÊäÈëÒ»¸öÃüÁî
+        //å¦‚æœå‘½ä»¤è¡Œä¸­å­˜åœ¨å›è½¦æ¢è¡Œç¬¦ï¼Œä¼šå½±å“æ­£åˆ™è¡¨è¾¾å¼, æ•…é™åˆ¶ä¸€æ¬¡åªèƒ½è¾“å…¥ä¸€ä¸ªå‘½ä»¤
         vector<string> tokens;
         bool boolValue = strSplit(tokens, cmdStr, "\n\r");
         IF_INVALID_SET_RETURN_VALUE(boolValue, EN_CMD_TYPE_INVALID_CMD, stCommCmd.enCmdType)
@@ -69,12 +69,12 @@ void ProcCmdEnter(const char cmdStr[MAX_RECEIVE_BUFFER_LENGTH], char returnStr[M
         IF_INVALID_SET_RETURN_VALUE(tokens.size() <= 1, EN_CMD_TYPE_INVALID_CMD, stCommCmd.enCmdType)
         IF_INVALID_BREAK(tokens.size() == 1)
 
-        //½âÎöÃüÁî
+        //è§£æå‘½ä»¤
         int result = cmdParse(stCommCmd, tokens[0].c_str());
         IF_INVALID_SET_RETURN_VALUE(result != -1, EN_CMD_TYPE_INVALID_CMD, stCommCmd.enCmdType);
     }while(false);
 
-    //µ÷ÓÃ´¦Àíº¯Êı´¦ÀíÃüÁî
+    //è°ƒç”¨å¤„ç†å‡½æ•°å¤„ç†å‘½ä»¤
     EN_CMD_TYPE enCmdType = stCommCmd.enCmdType;
 
     if(NULL == g_cmdProcFuncList[enCmdType])

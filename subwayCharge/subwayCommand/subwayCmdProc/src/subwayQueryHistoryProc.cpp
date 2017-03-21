@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayGlobalDef.h"
 #include "subwayMacro.h"
@@ -12,16 +12,16 @@
 using namespace std;
 
 /*
-@ ²éÑ¯ÀúÊ·Ïû·Ñ¼ÇÂ¼
-@ Èë²Î£ºunCmd, ÃüÁîÄÚÈİ
-@ ³ö²Î: returnStr
-@ ·µ»ØÖµ: ÎŞ
+@ æŸ¥è¯¢å†å²æ¶ˆè´¹è®°å½•
+@ å…¥å‚ï¼šunCmd, å‘½ä»¤å†…å®¹
+@ å‡ºå‚: returnStr
+@ è¿”å›å€¼: æ— 
 */
 void ProcQueryHistoryCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
-    // ²éÑ¯ÀúÊ·Ïû·Ñ¼ÇÂ¼
+    // æŸ¥è¯¢å†å²æ¶ˆè´¹è®°å½•
 
-    // ²éÕÒ¿¨ĞÅÏ¢ GetCardInfo()
+    // æŸ¥æ‰¾å¡ä¿¡æ¯ GetCardInfo()
     unsigned int cardNo = unCmd.stCmdQueryHis.cardNo;
     unsigned int balance = 0;
     EN_CARD_TYPE enCard;
@@ -32,14 +32,14 @@ void ProcQueryHistoryCmd(UN_CMD &unCmd, char returnStr[MAX_SEND_BUFFER_LENGTH])
         return;
     }
 
-    // ÅĞ¶ÏÊÇ·ñÊÇ µ¥³Ì¿¨
+    // åˆ¤æ–­æ˜¯å¦æ˜¯ å•ç¨‹å¡
     if (EN_CARD_TYPE_SINGLE == enCard)
     {
         GetOutputResultStr(EN_CMD_TYPE_QUERY_HIS, EN_RETURN_SINGLE_CARD_CANNOT_HISTORY, cardNo, enCard, balance, returnStr);
         return;
     }
 
-    // »ñÈ¡ÀúÊ·¼ÇÂ¼£¬°Ñ½á¹ûÌí¼Óµ½ returnStr µÄºó±ß
+    // è·å–å†å²è®°å½•ï¼ŒæŠŠç»“æœæ·»åŠ åˆ° returnStr çš„åè¾¹
     GetOutputResultStr(EN_CMD_TYPE_QUERY_HIS, enResult, cardNo, enCard, balance, returnStr);
     QueryHistory(cardNo, returnStr);
 }

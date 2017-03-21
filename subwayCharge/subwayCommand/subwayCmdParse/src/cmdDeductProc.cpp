@@ -1,10 +1,10 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include "subwayCmdParse/include/cmdGlobal.h"
 #include "subwayCmdParse/include/cmdDeductProc.h"
 using namespace std;
 
-//¿Û·ÑÃüÁîµÄĞÅÔª½âÂëº¯ÊıÁĞ±í
+//æ‰£è´¹å‘½ä»¤çš„ä¿¡å…ƒè§£ç å‡½æ•°åˆ—è¡¨
 ELEMENT_FUNC g_cmdDeductFunc[EN_CMD_DEDUCT_BUTT] = 
 {
     cmdCmdParse<ST_CMD_DEDUCT>,
@@ -15,10 +15,10 @@ ELEMENT_FUNC g_cmdDeductFunc[EN_CMD_DEDUCT_BUTT] =
     cmdDeductExitStationParse
 };
 
-//¿Û·ÑÃüÁîµÄÕıÔò±í´ïÊ½£¬ÓÃÓÚ¼ì²éÃüÁî¸ñÊ½ÊÇ·ñÕıÈ·
+//æ‰£è´¹å‘½ä»¤çš„æ­£åˆ™è¡¨è¾¾å¼ï¼Œç”¨äºæ£€æŸ¥å‘½ä»¤æ ¼å¼æ˜¯å¦æ­£ç¡®
 string g_cmdDeductPattern("^[ ]{0,}[cC]{1}[ ]{1}[0-9]{1,}[ ]{1}[0-9]{1,2}[:]{1}[0-9]{1,2}[ ]{1}[sS]{1}[0-9]{1,}[ ]{1}[0-9]{1,2}[:]{1}[0-9]{1,2}[ ]{1}[sS]{1}[0-9]{1,}[ ]{0,}$"); 
 
-//½âÂë½øÕ¾Ê±¼ä
+//è§£ç è¿›ç«™æ—¶é—´
 int cmdDeductEnterTimeParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -27,7 +27,7 @@ int cmdDeductEnterTimeParse(void* outPut, string* str)
     return cmdTimeParse(&(deductCmd->enterTime), str);
 }
 
-//½âÂë½øÕ¾Õ¾µã
+//è§£ç è¿›ç«™ç«™ç‚¹
 int cmdDeductEnterStationParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -36,7 +36,7 @@ int cmdDeductEnterStationParse(void* outPut, string* str)
     return cmdStationParse(deductCmd->enterStation, str);
 }
 
-//½âÂë³öÕ¾Ê±¼ä
+//è§£ç å‡ºç«™æ—¶é—´
 int cmdDeductExitTimeParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -45,7 +45,7 @@ int cmdDeductExitTimeParse(void* outPut, string* str)
     return cmdTimeParse(&(deductCmd->exitTime), str);
 }
 
-//½âÂë³öÕ¾Õ¾µã
+//è§£ç å‡ºç«™ç«™ç‚¹
 int cmdDeductExitStationParse(void* outPut, string* str)
 {
     CHECK_INPUT_PARA(outPut, str);
@@ -54,7 +54,7 @@ int cmdDeductExitStationParse(void* outPut, string* str)
     return cmdStationParse(deductCmd->exitStation, str);
 }
 
-//½âÂë¿Û·ÑÃüÁî
+//è§£ç æ‰£è´¹å‘½ä»¤
 int parseCmdDeduct(string &cmd, void* pStCmd)
 {
     int intValue = parseCmd<ST_CMD_DEDUCT>(cmd, pStCmd, g_cmdDeductPattern, g_cmdDeductFunc);
@@ -65,7 +65,7 @@ int parseCmdDeduct(string &cmd, void* pStCmd)
     return intValue;
 }
 
-//´òÓ¡½âÂëºóµÄ¿Û·ÑÃüÁî
+//æ‰“å°è§£ç åçš„æ‰£è´¹å‘½ä»¤
 void printfCmdDeduct(ST_CMD_DEDUCT &stCmdDeduct)
 {
     cout<<"CMD:                 "<<stCmdDeduct.cmd<<endl;

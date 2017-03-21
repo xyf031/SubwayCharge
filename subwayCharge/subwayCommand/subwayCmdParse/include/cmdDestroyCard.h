@@ -1,9 +1,9 @@
-#ifndef __CMD_DESTROY_CARD_H__
+ï»¿#ifndef __CMD_DESTROY_CARD_H__
 #define __CMD_DESTROY_CARD_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_DESTROY_CARD_CMD_CODE = 0,
@@ -11,10 +11,10 @@ typedef enum
     EN_CMD_DESTROY_CARD_BUTT
 }EN_CMD_DESTROY_CARD_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdDesCard(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdDesCard(ST_CMD_DESTROY_CARD &stDesCard);
 
 

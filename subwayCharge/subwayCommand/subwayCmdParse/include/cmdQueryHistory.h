@@ -1,9 +1,9 @@
-#ifndef __CMD_QUERY_HIS_H__
+ï»¿#ifndef __CMD_QUERY_HIS_H__
 #define __CMD_QUERY_HIS_H__
 #include <string>
 #include "subwayCmdParse/include/cmdGlobal.h"
 
-//ÃüÁîÖĞµÄÃ¿¸öĞÅÔª
+//å‘½ä»¤ä¸­çš„æ¯ä¸ªä¿¡å…ƒ
 typedef enum
 {
     EN_CMD_QUERY_HIS_CMD_CODE = 0,
@@ -11,10 +11,10 @@ typedef enum
     EN_CMD_QUERY_HIS_BUTT
 }EN_CMD_QUERY_HIS_ELEMENT;
 
-//½âÎö¿Û·ÑÃüÁî
+//è§£ææ‰£è´¹å‘½ä»¤
 int parseCmdQueHistory(string &cmd, void* pStCmd);
 
-//´òÓ¡½âÎö½á¹û
+//æ‰“å°è§£æç»“æœ
 void printfCmdQueHistory(ST_CMD_QUERY_HIS &stCmd);
 
 #endif

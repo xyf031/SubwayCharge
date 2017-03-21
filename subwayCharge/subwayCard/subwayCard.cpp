@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -14,8 +14,8 @@ using namespace std;
 static vector<subwayCard*> _subwayCards;
 
 /*
-@ ³õÊ¼»¯ËùÓĞ¿¨ĞÅÏ¢
-@ ·µ»ØÖµ: ÎŞ
+@ åˆå§‹åŒ–æ‰€æœ‰å¡ä¿¡æ¯
+@ è¿”å›å€¼: æ— 
 */
 void InitCardManagerInfo()
 {
@@ -35,10 +35,10 @@ void InitCardManagerInfo()
 
 
 /*
-@ ¿ª¿¨£¬·ÖÅä¿¨ºÅºÍ¿¨ĞÅÏ¢
-@ Èë²Î£ºenCard,¿¨ÀàĞÍ; charge: ³äÖµ
-@ ³ö²Î: cardNo, ·ÖÅäµÄ¿¨ºÅ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬·ÖÅä³É¹¦; EN_RETURN_CARD_OVERLOW, ·ÖÅäÊ§°Ü;
+@ å¼€å¡ï¼Œåˆ†é…å¡å·å’Œå¡ä¿¡æ¯
+@ å…¥å‚ï¼šenCard,å¡ç±»å‹; charge: å……å€¼
+@ å‡ºå‚: cardNo, åˆ†é…çš„å¡å·
+@ è¿”å›å€¼: EN_RETURN_SUCCï¼Œåˆ†é…æˆåŠŸ; EN_RETURN_CARD_OVERLOW, åˆ†é…å¤±è´¥;
 */
 EN_RETURN_CODE AssignCard(unsigned int &cardNo, EN_CARD_TYPE enCard, unsigned int charge)
 {
@@ -70,10 +70,10 @@ EN_RETURN_CODE AssignCard(unsigned int &cardNo, EN_CARD_TYPE enCard, unsigned in
 
 
 /*
-@ ³äÖµ
-@ Èë²Î£ºcardNo,¿¨ºÅ; recharge: ³äÖµ
-@ ³ö²Î: ÎŞ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; ÆäËû, Ê§°Ü;
+@ å……å€¼
+@ å…¥å‚ï¼šcardNo,å¡å·; recharge: å……å€¼
+@ å‡ºå‚: æ— 
+@ è¿”å›å€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; å…¶ä»–, å¤±è´¥;
 */
 EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge)
 {
@@ -92,11 +92,11 @@ EN_RETURN_CODE RechargeCard(unsigned int cardNo, unsigned int recharge)
 
 
 /*
-@ »ñÈ¡¿¨Óà¶î
-@ Èë²Î£ºcardNo,¿¨ºÅ; 
-@ ³ö²Î: balance: Óà¶î
-        enCard:  ¿¨ÀàĞÍ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INVALID_CARD, Ê§°Ü;
+@ è·å–å¡ä½™é¢
+@ å…¥å‚ï¼šcardNo,å¡å·; 
+@ å‡ºå‚: balance: ä½™é¢
+        enCard:  å¡ç±»å‹
+@ è¿”å›å€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INVALID_CARD, å¤±è´¥;
 */
 EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_TYPE &enCard)
 {
@@ -111,10 +111,10 @@ EN_RETURN_CODE GetCardInfo(unsigned int cardNo, unsigned int &balance, EN_CARD_T
 
 
 /*
-@ ¿¨¿Û·Ñ
-@ Èë²Î£ºcardNo,¿¨ºÅ; enCard, ¿¨ÀàĞÍ; deductPrice, ¿Û·ÑÆ±¼Û
-@ ³ö²Î: balance, ¿Û·ÑºóµÄÓà¶î
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INVALID_CARD, EN_RETURN_BALANCE_NOT_ENOUGH, Ê§°Ü;
+@ å¡æ‰£è´¹
+@ å…¥å‚ï¼šcardNo,å¡å·; enCard, å¡ç±»å‹; deductPrice, æ‰£è´¹ç¥¨ä»·
+@ å‡ºå‚: balance, æ‰£è´¹åçš„ä½™é¢
+@ è¿”å›å€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INVALID_CARD, EN_RETURN_BALANCE_NOT_ENOUGH, å¤±è´¥;
 */
 EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int deductPrice, unsigned int &balance)
 {
@@ -132,17 +132,17 @@ EN_RETURN_CODE DeductCard(unsigned int cardNo, EN_CARD_TYPE enCard, unsigned int
 
 
 /*
-@ É¾³ı¿¨ĞÅÏ¢
-@ Èë²Î£ºcardNo,¿¨ºÅ; 
-@ ³ö²Î: ÎŞ
-@ ·µ»ØÖµ: 0£¬³É¹¦; -1, Ê§°Ü;
+@ åˆ é™¤å¡ä¿¡æ¯
+@ å…¥å‚ï¼šcardNo,å¡å·; 
+@ å‡ºå‚: æ— 
+@ è¿”å›å€¼: 0ï¼ŒæˆåŠŸ; -1, å¤±è´¥;
 */
 int DeleteCard(unsigned int cardNo)
 {
     if (cardNo >= _subwayCards.size() || NULL == _subwayCards[cardNo])
         return -1;
 
-    // ÊÍ·ÅÀúÊ·¼ÇÂ¼¿Õ¼ä
+    // é‡Šæ”¾å†å²è®°å½•ç©ºé—´
     pHisNode pHead = _subwayCards[cardNo]->history, pTmp;
     while (pHead != NULL)
     {
@@ -161,18 +161,18 @@ int DeleteCard(unsigned int cardNo)
 
 
 /*
-@ »ñÈ¡¿¨ÀàĞÍ×Ö·û´®
-@ Èë²Î£ºenCard,¿¨ÀàĞÍ; 
-@ ³ö²Î: ÎŞ
-@ ·µ»ØÖµ: ¿¨ÀàĞÍ×Ö·û´®;
+@ è·å–å¡ç±»å‹å­—ç¬¦ä¸²
+@ å…¥å‚ï¼šenCard,å¡ç±»å‹; 
+@ å‡ºå‚: æ— 
+@ è¿”å›å€¼: å¡ç±»å‹å­—ç¬¦ä¸²;
 */
 char cardNames[][30] = {
-    "µ¥³Ì¿¨",
-    "ÀÏÄê¿¨",
-    "ÆÕÍ¨¿¨",
-    "Î´Öª¿¨ÀàĞÍ"
+    "å•ç¨‹å¡",
+    "è€å¹´å¡",
+    "æ™®é€šå¡",
+    "æœªçŸ¥å¡ç±»å‹"
 };
-char cardName[30] = "Î´Öª¿¨ÀàĞÍ";
+char cardName[30] = "æœªçŸ¥å¡ç±»å‹";
 char* GetCardTypeStr(EN_CARD_TYPE enCard)
 {
 	switch (enCard)
@@ -186,10 +186,10 @@ char* GetCardTypeStr(EN_CARD_TYPE enCard)
     //return cardNames[enCard];
 }
 /*
-@ ¸ù¾İ¿¨ÀàĞÍ×Ö·û´®, Ê¶±ğ¿¨ÀàĞÍ
-@ Èë²Î£ºcardType,      ¿¨ÀàĞÍ×Ö·û´®; 
-@ ³ö²Î: enCard,        ¿¨ÀàĞÍ
-@ ·µ»ØÖµ: EN_RETURN_SUCC£¬³É¹¦; EN_RETURN_INPUT_INVALID_CARDTYPE, Ê§°Ü;
+@ æ ¹æ®å¡ç±»å‹å­—ç¬¦ä¸², è¯†åˆ«å¡ç±»å‹
+@ å…¥å‚ï¼šcardType,      å¡ç±»å‹å­—ç¬¦ä¸²; 
+@ å‡ºå‚: enCard,        å¡ç±»å‹
+@ è¿”å›å€¼: EN_RETURN_SUCCï¼ŒæˆåŠŸ; EN_RETURN_INPUT_INVALID_CARDTYPE, å¤±è´¥;
 */
 EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard)
 {
@@ -214,10 +214,10 @@ EN_RETURN_CODE GetCardType(char cardType[], EN_CARD_TYPE &enCard)
 
 
 /*
-@ ²åÈëÀúÊ·¼ÇÂ¼
-@ Èë²Î£º¿¨ºÅ¡¢Ïû·Ñ½ğ¶î¡¢ÈëÕ¾Ê±¼ä¡¢ÈëÕ¾Õ¾Ãû¡¢³öÕ¾Ê±¼ä¡¢³öÕ¾Õ¾Ãû¡£
-@ ³ö²Î£ºÎŞ
-@ ·µ»ØÖµ£ºEN_RETURN_SUCC ³É¹¦¡¢EN_RETURN_INNER_ERR ÄÚ´æmallocÊ§°Ü¡£
+@ æ’å…¥å†å²è®°å½•
+@ å…¥å‚ï¼šå¡å·ã€æ¶ˆè´¹é‡‘é¢ã€å…¥ç«™æ—¶é—´ã€å…¥ç«™ç«™åã€å‡ºç«™æ—¶é—´ã€å‡ºç«™ç«™åã€‚
+@ å‡ºå‚ï¼šæ— 
+@ è¿”å›å€¼ï¼šEN_RETURN_SUCC æˆåŠŸã€EN_RETURN_INNER_ERR å†…å­˜mallocå¤±è´¥ã€‚
 */
 EN_RETURN_CODE InsertHistory(unsigned int cardNo, unsigned int deductPrice, ST_SUBWAY_TIME enterTime, ST_SUBWAY_TIME exitTime, const char* enterStation, const char* exitStation)
 {
@@ -265,10 +265,10 @@ EN_RETURN_CODE InsertHistory(unsigned int cardNo, unsigned int deductPrice, ST_S
 
 
 /*
-@ ²éÑ¯ÀúÊ·¼ÇÂ¼
-@ Èë²Î£º¿¨ºÅ£¬´ı´æ´¢×Ö·û´®
-@ ³ö²Î£º×îÖÕÊä³öµÄ×Ö·û´®
-@ ·µ»ØÖµ£º³É¹¦¡¢ÎŞĞ§¿¨
+@ æŸ¥è¯¢å†å²è®°å½•
+@ å…¥å‚ï¼šå¡å·ï¼Œå¾…å­˜å‚¨å­—ç¬¦ä¸²
+@ å‡ºå‚ï¼šæœ€ç»ˆè¾“å‡ºçš„å­—ç¬¦ä¸²
+@ è¿”å›å€¼ï¼šæˆåŠŸã€æ— æ•ˆå¡
 */
 EN_RETURN_CODE QueryHistory(unsigned int cardNo, char returnStr[MAX_SEND_BUFFER_LENGTH])
 {
@@ -282,19 +282,19 @@ EN_RETURN_CODE QueryHistory(unsigned int cardNo, char returnStr[MAX_SEND_BUFFER_
     {
         if (pHead == NULL) break;
 
-        outs << "\r\n<ĞòºÅ=" << count;
-        outs << ",½øÕ¾Ê±¼ä=" << pHead->enterTime.hour << ":" << pHead->enterTime.minutes;
-        outs << ",½øÕ¾Õ¾µã=" << pHead->enterStation;
-        outs << ",³öÕ¾Ê±¼ä=" << pHead->exitTime.hour << ":" << pHead->exitTime.minutes;
-        outs << ",³öÕ¾Õ¾µã=" << pHead->exitStation;
-        outs << ",Ïû·Ñ½ğ¶î=" << pHead->cost;
+        outs << "\r\n<åºå·=" << count;
+        outs << ",è¿›ç«™æ—¶é—´=" << pHead->enterTime.hour << ":" << pHead->enterTime.minutes;
+        outs << ",è¿›ç«™ç«™ç‚¹=" << pHead->enterStation;
+        outs << ",å‡ºç«™æ—¶é—´=" << pHead->exitTime.hour << ":" << pHead->exitTime.minutes;
+        outs << ",å‡ºç«™ç«™ç‚¹=" << pHead->exitStation;
+        outs << ",æ¶ˆè´¹é‡‘é¢=" << pHead->cost;
         outs << ">";
         pHead = pHead->next;
     }
 
     string out = outs.str();
     if (_subwayCards[cardNo]->history == NULL)
-        out = "\r\n<ÎŞÏû·Ñ¼ÇÂ¼>";
+        out = "\r\n<æ— æ¶ˆè´¹è®°å½•>";
 
     const char* pCopyTmp = out.c_str();
     unsigned int lenFirstLine = strlen(returnStr);

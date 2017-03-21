@@ -1,0 +1,491 @@
+
+l
+L
+
+
+
+
+s s3 s15
+s s1 s8
+s s8 s1
+s s0 s16
+s s16 s0
+//
+(0, 3]: 2
+(3, 5]:3
+(5, 10]:4
+[10, ?):5
+
+r
+s s24 s8
+r
+s s100 s8
+r
+s s0 s99
+r
+s s0 s200
+r
+s s0 s16
+
+r
+s s0 s1
+s s0 s2
+s s0 s3
+s s0 s4
+s s0 s5
+s s0 s6
+s s0 s7
+s s0 s8
+s s0 s9
+s s0 s10
+s s0 s11
+s s0 s12
+s s0 s13
+s s0 s14
+s s0 s15
+s s0 s16
+s s1 s1
+s s1 s2
+s s1 s3
+s s1 s4
+s s1 s5
+s s1 s6
+s s1 s7
+s s1 s8
+s s1 s9
+s s1 s10
+s s1 s11
+s s1 s12
+s s1 s13
+s s1 s14
+s s1 s15
+s s1 s16
+s s2 s1
+s s2 s2
+s s2 s3
+s s2 s4
+s s2 s5
+s s2 s6
+s s2 s7
+s s2 s8
+s s2 s9
+s s2 s10
+s s2 s11
+s s2 s12
+s s2 s13
+s s2 s14
+s s2 s15
+s s2 s16
+s s3 s1
+s s3 s2
+s s3 s3
+s s3 s4
+s s3 s5
+s s3 s6
+s s3 s7
+s s3 s8
+s s3 s9
+s s3 s10
+s s3 s11
+s s3 s12
+s s3 s13
+s s3 s14
+s s3 s15
+s s3 s16
+s s4 s1
+s s4 s2
+s s4 s3
+s s4 s4
+s s4 s5
+s s4 s6
+s s4 s7
+s s4 s8
+s s4 s9
+s s4 s10
+s s4 s11
+s s4 s12
+s s4 s13
+s s4 s14
+s s4 s15
+s s4 s16
+s s5 s1
+s s5 s2
+s s5 s3
+s s5 s4
+s s5 s5
+s s5 s6
+s s5 s7
+s s5 s8
+s s5 s9
+s s5 s10
+s s5 s11
+s s5 s12
+s s5 s13
+s s5 s14
+s s5 s15
+s s5 s16
+s s6 s1
+s s6 s2
+s s6 s3
+s s6 s4
+s s6 s5
+
+
+
+
+
+b a 123
+b a 0
+b a 999
+b a 9999
+
+b b 0
+b b 1
+b b 123
+b b 999
+b b 1000
+
+b c 0
+b c 999
+b c 990
+
+r
+b a 100
+r
+b d 100
+r
+b c 1000
+r
+b c 100
+r
+b b 1000
+r
+b b 100
+
+r
+b c 1
+b c 2
+b c 3
+b c 4
+b c 5
+b c 6
+b c 7
+b c 8
+b c 9
+b c 10
+b c 11
+b c 12
+b c 13
+b c 14
+b c 15
+b c 16
+b c 17
+b c 18
+b c 19
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 90
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 50
+b c 20
+b c 30
+b c 40
+b c 80 
+
+
+
+
+
+r
+c 100 11:00 S1 12:00 S2
+r
+c 0 11:00 S1 12:00 S2
+
+r
+b c 100
+c 0 30:00 S1 10:00 S2
+h 0
+
+r
+b c 100
+c 0 8:00 S20 10:00 S2
+h 0
+
+r
+b c 100
+c 0 8:00 S1 25:00 S2
+r
+b c 100
+c 0 8:00 S20 10:00 S17
+r
+b c 100
+c 0 8:00 S20 7:00 S5
+r
+b c 100
+c 0 8:00 S5 8:00 S5
+h 0
+
+r
+b c 100
+c 0 8:00 S5 8:30 S5
+h 0
+
+r
+b c 2
+c 0 8:00 S5 9:30 S5
+h 0
+
+r
+b c 100
+c 0 8:00 S5 9:00 S5
+h 0
+
+
+r
+b c 1
+c 0 8:00 S5 8:01 S6
+h 0
+??????
+
+
+r
+b c 2
+c 0 8:00 S5 8:01 S6
+r
+b c 100
+c 0 8:00 S5 8:01 S6
+h 0
+
+r
+b c 22
+c 0 8:00 S5 8:01 S8
+r
+b c 100
+c 0 8:00 S5 8:01 S8
+r
+b c 100
+c 0 8:00 S5 8:01 S11
+r
+b c 100
+c 0 8:00 S1 8:01 S16
+r
+
+
+//
+b b 100
+c 0 30:00 S1 10:00 S2
+r
+b b 100
+c 0 8:00 S20 10:00 S2
+r
+b b 100
+c 0 8:00 S1 25:00 S2
+r
+b b 100
+c 0 8:00 S20 10:00 S17
+r
+b b 100
+c 0 8:00 S20 7:00 S5
+r
+b b 100
+c 0 8:00 S5 8:00 S5
+r
+b b 100
+c 0 8:00 S5 8:30 S5
+r
+b b 2
+c 0 8:00 S5 9:30 S5
+r
+b b 100
+c 0 8:00 S5 9:00 S5
+r
+b b 1
+c 0 8:00 S5 8:01 S6
+r
+b b 2
+c 0 8:00 S5 8:01 S6
+r
+b b 100
+c 0 8:00 S5 8:01 S6
+r
+b b 100
+c 0 10:00 S5 10:01 S6
+r
+b b 22
+c 0 8:00 S5 8:01 S8
+r
+b b 100
+c 0 8:00 S5 8:01 S8
+r
+b b 100
+c 0 14:59 S5 15:01 S8
+r
+b b 100
+c 0 8:00 S5 8:01 S11
+r
+b b 100
+c 0 14:59 S5 23:59 S11
+r
+b b 100
+c 0 15:00 S5 23:59 S11
+r
+b b 100
+c 0 8:00 S1 8:01 S16
+r
+b b 100
+c 0 15:00 S1 15:01 S16
+r
+s s1 s16
+c 0 30:00 S1 10:00 S2
+r
+s s1 s16
+c 0 8:00 S20 10:00 S2
+r
+s s1 s16
+c 0 8:00 S1 25:00 S2
+r
+s s1 s16
+c 0 8:00 S20 10:00 S17
+r
+s s1 s16
+c 0 8:00 S20 7:00 S5
+r
+s s1 s16
+c 0 8:00 S5 8:00 S5
+c 0 8:00 S5 8:00 S5
+r
+s s1 s2
+c 0 8:00 S5 8:30 S5
+c 0 8:00 S5 8:30 S5
+r
+s s1 s2
+c 0 8:00 S5 9:30 S5
+r
+s s1 s5
+c 0 8:00 S5 9:00 S5
+r
+s s1 s2
+c 0 8:00 S1 8:01 S2
+r
+s s1 s2
+c 0 8:00 S1 8:01 S5
+r
+s s1 s3
+c 0 8:00 S1 8:01 S3
+r
+s s1 s5
+c 0 8:00 S1 8:01 S5
+r
+s s1 s16
+c 0 8:00 S1 8:01 S16
+r
+s s1 s16
+c 0 8:00 S1 8:01 S2
+c 0 8:00 S1 8:01 S2
+
+
+
+
+
+
+
+
+r
+f 101 100
+r
+f 99 100
+
+r
+s s1 s6
+f 0 100
+r
+b c 1
+f 0 999
+
+r
+b c 100
+f 0 900
+
+r
+b c 100
+f 0 100
+
+
+
+
+
+
+
